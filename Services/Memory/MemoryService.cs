@@ -10,10 +10,18 @@ public interface IMemoryService : IService
     public float Capacity { get; }
 
     public float Current { get; }
+
+    public void Reset();
 }
 
 public partial class MemoryService : CanvasLayer, IMemoryService
 {
+    [Export]
+    private string OutOfMemoryAppStateName { get; set; } = "OutOfMemory";
+
+    [Export]
+    private float InitialCapacity { get; set; } = 1024;
+
     [Export]
     private float MovementCost { get; set; } = 1;
 
@@ -38,8 +46,8 @@ public partial class MemoryService : CanvasLayer, IMemoryService
             isTrackingInternal = value;
         }
     }
-    public float Capacity { get; private set; } = 1024;
-    public float Current { get; private set; } = 128;
+    public float Capacity { get; private set; }
+    public float Current { get; private set; }
 
     //
     //	Private Data
@@ -55,6 +63,8 @@ public partial class MemoryService : CanvasLayer, IMemoryService
 
     public override void _EnterTree()
     {
+        Reset();
+
         Services.Map.OnMapLoadStatusChanged += OnMapLoadStatusChanged;
         Services.Register<IMemoryService>(this);
     }
@@ -82,6 +92,18 @@ public partial class MemoryService : CanvasLayer, IMemoryService
     }
 
     //
+    //	Public Methods
+    //
+
+    public void Reset()
+    {
+        Capacity = InitialCapacity;
+        Current = 0;
+
+        previousRotation = Services.Player?.Current?.HeadNode.Rotation ?? Vector3.Zero;
+    }
+
+    //
     //	Private Methods
     //
 
@@ -93,7 +115,7 @@ public partial class MemoryService : CanvasLayer, IMemoryService
         if (Current >= Capacity)
         {
             IsTracking = false;
-            Log.WarnFor<MemoryService>("OUT OF MEM...!!!");
+            OutOfMemory();
         }
     }
 
@@ -114,6 +136,12 @@ public partial class MemoryService : CanvasLayer, IMemoryService
         memoryUsed += lookRotationDelta.Length() * LookCost;
 
         return memoryUsed;
+    }
+
+    private void OutOfMemory()
+    {
+        Log.WarnFor<MemoryService>("OUT OF MEM...!!!");
+        Services.App.TransitionToState(OutOfMemoryAppStateName);
     }
 
     private void OnMapLoadStatusChanged(MapLoadStatus status)

@@ -11,6 +11,8 @@ public partial class InGameAppState : AppState
         Services.Memory.Visible = true;
         Services.Pause.SetCanPause(nameof(InGameAppState), true, 0);
 
+        Services.Memory.Reset();
+
         // Load and start the first map
         LaunchWorld();
     }
@@ -18,6 +20,8 @@ public partial class InGameAppState : AppState
     public override void ExitState(AppState next)
     {
         KillWorld();
+
+        Services.Player.ClearPlayer();
 
         Services.Pause.ClearCanPause(nameof(InGameAppState));
         Services.Memory.Visible = false;

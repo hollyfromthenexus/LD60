@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://byidoe3h1ej7k"]
+
+[ext_resource type="Script" uid="uid://gey0lvk43bxu" path="res://AppStates/OutOfMemory/OutOfMemory.cs" id="1_msof5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_msof5"]
+font_size = 64
+
+[node name="OutOfMemory" type="CanvasLayer" unique_id=1587958161]
+layer = 2
+script = ExtResource("1_msof5")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=862675298]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 1, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1718660886]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "CRASH"
+label_settings = SubResource("LabelSettings_msof5")
+horizontal_alignment = 1
+vertical_alignment = 1

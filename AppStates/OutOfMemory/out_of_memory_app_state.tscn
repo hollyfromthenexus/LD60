@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bwf6hn1yhdquf"]
+
+[ext_resource type="Script" uid="uid://c284gex6gk6i6" path="res://AppStates/OutOfMemory/OutOfMemoryAppState.cs" id="1_1wkt7"]
+[ext_resource type="PackedScene" uid="uid://byidoe3h1ej7k" path="res://AppStates/OutOfMemory/out_of_memory.tscn" id="2_6uvqj"]
+
+[node name="OutOfMemory" type="Node" unique_id=1268827530]
+script = ExtResource("1_1wkt7")
+OutOfMemoryScene = ExtResource("2_6uvqj")

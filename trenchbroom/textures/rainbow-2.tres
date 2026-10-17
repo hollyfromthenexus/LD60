@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dd6a2kp1c3cyc"]
+
+[ext_resource type="Texture2D" uid="uid://65axoi0v1gjd" path="res://trenchbroom/textures/rainbow-2.png" id="1_pimig"]
+
+[resource]
+albedo_texture = ExtResource("1_pimig")
+metallic_specular = 0.0
+texture_filter = 2

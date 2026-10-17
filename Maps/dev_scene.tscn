@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://bbc2qgwscybr1"]
 
+[ext_resource type="Script" uid="uid://8xycjaq4kges" path="res://addons/DoveDraft/Services/Maps/Map.cs" id="1_mtlhs"]
 [ext_resource type="PackedScene" uid="uid://cl63usgbt38ls" path="res://addons/DoveDraft/Services/Player/player.tscn" id="1_xd2ty"]
+
+[sub_resource type="Environment" id="Environment_lg3yx"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_voske"]
 size = Vector3(32, 1, 32)
@@ -29,7 +32,10 @@ size = Vector3(2, 8, 2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
 size = Vector3(2, 8, 2)
 
-[node name="Main" type="Node3D" unique_id=940668198]
+[node name="Main" type="WorldEnvironment" unique_id=297841384]
+environment = SubResource("Environment_lg3yx")
+script = ExtResource("1_mtlhs")
+metadata/_custom_type_script = "uid://8xycjaq4kges"
 
 [node name="Ground" type="MeshInstance3D" parent="." unique_id=2051237886]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)

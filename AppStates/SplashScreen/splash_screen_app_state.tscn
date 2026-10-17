@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://4kbtjq44gmhp"]
+
+[ext_resource type="Script" uid="uid://b7pb8qyjnn6jy" path="res://AppStates/SplashScreen/SplashScreenAppState.cs" id="1_0npy7"]
+[ext_resource type="PackedScene" uid="uid://duyw3w6wo1vdi" path="res://AppStates/SplashScreen/splash_screen.tscn" id="2_87nxr"]
+
+[node name="SplashScreen" type="Node" unique_id=651420694]
+script = ExtResource("1_0npy7")
+SplashScreenScene = ExtResource("2_87nxr")

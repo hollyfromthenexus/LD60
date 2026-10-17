@@ -5,9 +5,10 @@
 [sub_resource type="LabelSettings" id="LabelSettings_msof5"]
 font_size = 64
 
-[node name="OutOfMemory" type="CanvasLayer" unique_id=1587958161]
+[node name="OutOfMemory" type="CanvasLayer" unique_id=1587958161 node_paths=PackedStringArray("Label")]
 layer = 2
 script = ExtResource("1_msof5")
+Label = NodePath("Label")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=862675298]
 anchors_preset = 15

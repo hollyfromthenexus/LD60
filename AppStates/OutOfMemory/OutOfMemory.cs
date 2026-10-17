@@ -1,15 +1,25 @@
-using Godot;
 using System;
+using System.Threading;
+using DoveDraft;
+using Godot;
+using GodotTask;
 
 public partial class OutOfMemory : CanvasLayer
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
+    [Export]
+    private Label Label { get; set; }
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
+    public async GDTask CrashRoutine(CancellationToken token)
+    {
+        Log.For<SplashScreenAppState>("Out of memory routine started");
+        Label.Visible = false;
+
+        await GDTask.Delay(500, token);
+
+        Label.Visible = true;
+        await GDTask.Delay(2000, token);
+
+        Label.Visible = false;
+        await GDTask.Delay(200, token);
+    }
 }

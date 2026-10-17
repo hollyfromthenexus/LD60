@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://brrpom1dk5367"]
+
+[ext_resource type="Script" uid="uid://dtngjddc6g4c" path="res://addons/DoveDraft/Services/Config/DoveDraftConfigService.cs" id="1_bn7xv"]
+[ext_resource type="Resource" uid="uid://570r58becsxl" path="res://dovedraft_config.tres" id="2_hetsf"]
+
+[node name="DoveDraftConfigService" type="Node" unique_id=464707864]
+script = ExtResource("1_bn7xv")
+Config = ExtResource("2_hetsf")
+metadata/_custom_type_script = "uid://dtngjddc6g4c"

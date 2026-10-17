@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DoveDraftConfig" format=3 uid="uid://570r58becsxl"]
+
+[ext_resource type="Resource" uid="uid://c203qup4kw2an" path="res://LD60.yarnproject" id="1_ug4nl"]
+[ext_resource type="Script" uid="uid://dvb54fm10xosf" path="res://addons/DoveDraft/Services/Config/DoveDraftConfig.cs" id="2_nb7bd"]
+
+[resource]
+script = ExtResource("2_nb7bd")
+GameYarnProject = ExtResource("1_ug4nl")
+metadata/_custom_type_script = "uid://dvb54fm10xosf"

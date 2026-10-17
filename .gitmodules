@@ -1,0 +1,6 @@
+[submodule "addons_src/YarnSpinner-Godot"]
+	path = addons_src/YarnSpinner-Godot
+	url = https://github.com/YarnSpinnerTool/YarnSpinner-Godot.git
+[submodule "addons_src/DoveDraft"]
+	path = addons_src/DoveDraft
+	url = https://github.com/hollyfromthenexus/DoveDraft.git

@@ -1,0 +1,17 @@
+<Project Sdk="Godot.NET.Sdk/4.8.0-beta.1">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <DefaultItemExcludes>$(DefaultItemExcludes);addons_src\**\*</DefaultItemExcludes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GDTask" Version="3.0.0" />
+  </ItemGroup>
+
+  <Import Project="addons\YarnSpinner-Godot\YarnSpinner-Godot.props" />
+</Project>

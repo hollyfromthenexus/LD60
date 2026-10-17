@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="TrenchBroomGameConfig" format=3 uid="uid://ciwqx1ekw7vw3"]
+
+[ext_resource type="Resource" uid="uid://b4xhdj0e16lop" path="res://addons/func_godot/game_config/trenchbroom/tb_face_tag_clip.tres" id="1_apyfw"]
+[ext_resource type="Resource" uid="uid://ca7377sfgj074" path="res://addons/func_godot/game_config/trenchbroom/tb_face_tag_skip.tres" id="2_jfggw"]
+[ext_resource type="Resource" uid="uid://bkjxc54mmdhbo" path="res://addons/func_godot/game_config/trenchbroom/tb_face_tag_origin.tres" id="3_sqhe3"]
+[ext_resource type="Resource" uid="uid://cowsm3obtmt73" path="res://trenchbroom/LD60_fgd.tres" id="4_apyfw"]
+[ext_resource type="Texture2D" uid="uid://decwujsyhj0qy" path="res://addons/func_godot/icon32.png" id="5_44kx6"]
+[ext_resource type="Script" uid="uid://cx44c4vnq8bt5" path="res://addons/func_godot/src/trenchbroom/trenchbroom_game_config.gd" id="6_esxwq"]
+
+[resource]
+script = ExtResource("6_esxwq")
+game_name = "LD60"
+fgd_file = ExtResource("4_apyfw")
+metadata/_custom_type_script = "uid://cx44c4vnq8bt5"

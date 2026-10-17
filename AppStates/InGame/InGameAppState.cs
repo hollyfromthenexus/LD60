@@ -8,6 +8,7 @@ public partial class InGameAppState : AppState
     {
         Services.HUD.Visible = true;
         Services.Dialog.Visible = true;
+        Services.Pause.SetCanPause(nameof(InGameAppState), true, 0);
 
         // Load and start the first map
         LaunchWorld();
@@ -17,6 +18,7 @@ public partial class InGameAppState : AppState
     {
         KillWorld();
 
+        Services.Pause.ClearCanPause(nameof(InGameAppState));
         Services.Dialog.Visible = false;
         Services.HUD.Visible = false;
     }

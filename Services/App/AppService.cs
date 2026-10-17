@@ -47,6 +47,10 @@ public partial class AppService : Node, IAppService
 
     public override void _Ready()
     {
+        // Set initial UI states
+        Services.HUD.Visible = false;
+        Services.Dialog.Visible = false;
+
         if (InitialState == null)
         {
             Log.WarnFor<AppService>("No initial state set...!");

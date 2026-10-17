@@ -1,0 +1,18 @@
+// Game: LD60
+// Format: Valve
+// entity 0
+{
+"mapversion" "220"
+"wad" ""
+"classname" "worldspawn"
+"_tb_mod" "trenchbroom"
+// brush 0
+{
+( -64 64 16 ) ( -64 -208 16 ) ( -64 -208 -16 ) placeholder-magenta [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -64 -208 16 ) ( 64 -208 16 ) ( 64 -208 -16 ) placeholder-magenta [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 64 -208 -16 ) ( 64 64 -16 ) ( -64 64 -16 ) placeholder-magenta [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -64 64 16 ) ( 64 64 16 ) ( 64 -208 16 ) placeholder-magenta [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 64 64 -16 ) ( 64 64 16 ) ( -64 64 16 ) placeholder-magenta [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 64 -208 16 ) ( 64 64 16 ) ( 64 64 -16 ) placeholder-magenta [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+}

@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Services="*uid://bbj8d0qj7fgog"
-ExamplesDovedraftConfigService="*uid://brrpom1dk5367"
+DovedraftConfigService="*uid://brrpom1dk5367"
 GameSaveService="*uid://8r3c7kdecox7"
 WorldService="*uid://cwhv0q48nhfvd"
 MapService="*uid://c0m6rbi6j4iej"
@@ -27,9 +27,8 @@ CameraService="*uid://ci6kbyg1yakgl"
 HUD="*uid://bk75mubxovxck"
 MouseLock="*uid://cgvu3pe1tcdjn"
 PlayerService="*uid://c8stmq6jpgh0q"
-DovedraftConfigService="*uid://brrpom1dk5367"
 SettingsService="*uid://bv3ydp7u1a0rv"
-AppService="*uid://c3251xwwdnv1i"
+AppService="*uid://cusg5yph0jp5v"
 
 [display]
 

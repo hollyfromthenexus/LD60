@@ -12,12 +12,6 @@ public interface IAppService : IService
 
 public partial class AppService : Node, IAppService
 {
-    [Export]
-    private Array<AppState> AllStates { get; set; } = new();
-
-    [Export]
-    private AppState InitialState { get; set; }
-
     public AppState CurrentState { get; private set; }
 
     //
@@ -35,13 +29,6 @@ public partial class AppService : Node, IAppService
 
     public override void _EnterTree()
     {
-        // Populate the states by their name.
-        states.Clear();
-        for (int i = 0; i < AllStates.Count; i++)
-        {
-            states.Add(AllStates[i].Name, AllStates[i]);
-        }
-
         Services.Register<IAppService>(this);
     }
 
@@ -51,13 +38,17 @@ public partial class AppService : Node, IAppService
         Services.HUD.Visible = false;
         Services.Dialog.Visible = false;
 
-        if (InitialState == null)
+        LD60Config config = LD60Config.Get();
+
+        // Populate the states by their name.
+        foreach (PackedScene appStateScene in config.AppStates)
         {
-            Log.WarnFor<AppService>("No initial state set...!");
-            return;
+            AppState appState = appStateScene.Instantiate<AppState>();
+            AddChild(appState);
+            states.Add(appState.Name, appState);
         }
 
-        TransitionToState(InitialState.Name);
+        TransitionToState(config.InitialAppState);
     }
 
     public override void _ExitTree()

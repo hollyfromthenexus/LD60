@@ -1,9 +1,13 @@
-[gd_resource type="Resource" script_class="DoveDraftConfig" format=3 uid="uid://570r58becsxl"]
+[gd_resource type="Resource" script_class="LD60Config" format=3 uid="uid://570r58becsxl"]
 
 [ext_resource type="Resource" uid="uid://c203qup4kw2an" path="res://LD60.yarnproject" id="1_ug4nl"]
-[ext_resource type="Script" uid="uid://dvb54fm10xosf" path="res://addons/DoveDraft/Services/Config/DoveDraftConfig.cs" id="2_nb7bd"]
+[ext_resource type="PackedScene" uid="uid://4kbtjq44gmhp" path="res://AppStates/SplashScreen/splash_screen_app_state.tscn" id="1_v56nd"]
+[ext_resource type="PackedScene" uid="uid://bxn31bc3qhv1m" path="res://AppStates/MainMenu/main_menu_app_state.tscn" id="2_eyktm"]
+[ext_resource type="PackedScene" uid="uid://rnyarxsi75iu" path="res://AppStates/InGame/in_game_app_state.tscn" id="3_jicb5"]
+[ext_resource type="Script" uid="uid://ojuhw6b4sxij" path="res://Services/LD60Config.cs" id="5_xx1ft"]
 
 [resource]
-script = ExtResource("2_nb7bd")
+script = ExtResource("5_xx1ft")
+AppStates = Array[PackedScene]([ExtResource("1_v56nd"), ExtResource("2_eyktm"), ExtResource("3_jicb5")])
 GameYarnProject = ExtResource("1_ug4nl")
 metadata/_custom_type_script = "uid://dvb54fm10xosf"

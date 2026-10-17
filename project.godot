@@ -45,7 +45,7 @@ project/assembly_name="LD60"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/DoveDraft/plugin.cfg", "res://addons/YarnSpinner-Godot/plugin.cfg")
+enabled=PackedStringArray("res://addons/DoveDraft/plugin.cfg", "res://addons/YarnSpinner-Godot/plugin.cfg", "res://addons/func_godot/plugin.cfg")
 
 [input]
 

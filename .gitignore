@@ -1,5 +1,6 @@
 # LD60 specific ignores
 addons/DoveDraft
+addons/func_godot
 addons/YarnSpinner-Godot
 
 # Godot 4+ specific ignores

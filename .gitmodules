@@ -4,3 +4,6 @@
 [submodule "addons_src/DoveDraft"]
 	path = addons_src/DoveDraft
 	url = https://github.com/hollyfromthenexus/DoveDraft.git
+[submodule "addons_src/func_godot_plugin"]
+	path = addons_src/func_godot_plugin
+	url = https://github.com/func-godot/func_godot_plugin.git

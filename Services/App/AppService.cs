@@ -37,6 +37,7 @@ public partial class AppService : Node, IAppService
         // Set initial UI states
         Services.HUD.Visible = false;
         Services.Dialog.Visible = false;
+        Services.Memory.Visible = false;
 
         LD60Config config = LD60Config.Get();
 

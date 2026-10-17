@@ -30,6 +30,7 @@ PlayerService="*uid://c8stmq6jpgh0q"
 SettingsService="*uid://bv3ydp7u1a0rv"
 LoadingScreenService="*uid://cmtlt0y7itrmv"
 PauseService="*uid://bx6i6f7pykpvr"
+MemoryService="*uid://7k7ke61fctn2"
 AppService="*uid://cusg5yph0jp5v"
 
 [display]

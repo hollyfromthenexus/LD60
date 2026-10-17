@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://7k7ke61fctn2"]
+
+[ext_resource type="Script" uid="uid://b6rykn0hinsfs" path="res://Services/Memory/MemoryService.cs" id="1_k7n7l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_k7n7l"]
+font_size = 33
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+
+[node name="MemoryService" type="CanvasLayer" unique_id=1156203867 node_paths=PackedStringArray("ProgressBar", "Label")]
+layer = -20
+script = ExtResource("1_k7n7l")
+ProgressBar = NodePath("MemoryHUD/MarginContainer/VBoxContainer/ProgressBar")
+Label = NodePath("MemoryHUD/MarginContainer/VBoxContainer/Label")
+
+[node name="MemoryHUD" type="Control" parent="." unique_id=1399931136]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 300.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MemoryHUD" unique_id=1359481954]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MemoryHUD/MarginContainer" unique_id=215160155]
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="MemoryHUD/MarginContainer/VBoxContainer" unique_id=1020047432]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+value = 12.28
+show_percentage = false
+
+[node name="Label" type="Label" parent="MemoryHUD/MarginContainer/VBoxContainer" unique_id=859166585]
+layout_mode = 2
+text = "THIS IS A TEST"
+label_settings = SubResource("LabelSettings_k7n7l")

@@ -6,6 +6,7 @@
 transparency = 2
 alpha_scissor_threshold = 0.525
 alpha_antialiasing_mode = 0
+cull_mode = 2
 albedo_texture = ExtResource("1_gosct")
 metallic_specular = 0.0
 uv1_scale = Vector3(2, 2, 2)

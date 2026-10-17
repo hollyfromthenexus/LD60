@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://2n86nogn55kq" path="res://Services/LoadingScreen/load-spinner.png" id="2_sutsk"]
 
 [node name="LoadingScreenService" type="CanvasLayer" unique_id=1425059310 node_paths=PackedStringArray("RootControl", "Spinner")]
-layer = -100
+layer = -1
 script = ExtResource("1_c775q")
+TransitionInTimeMs = 250
 TransitionInEase = 2.0
 TransitionOutEase = 0.5
 RootControl = NodePath("Control")

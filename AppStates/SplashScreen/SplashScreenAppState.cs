@@ -14,6 +14,10 @@ public partial class SplashScreenAppState : AppState
     private CancellationTokenSource cancellationSource;
     private SplashScreen splashScreen;
 
+    //
+    //  State Methods
+    //
+
     public override void EnterState(AppState prev)
     {
         // Load assets

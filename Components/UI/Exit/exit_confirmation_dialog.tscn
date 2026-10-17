@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bqs081nlvdfmj"]
+
+[node name="ExitConfirmationDialog" type="ConfirmationDialog" unique_id=597587112]
+oversampling_override = 1.0
+title = "Confirm"
+initial_position = 1
+size = Vector2i(323, 100)
+visible = true
+ok_button_text = "Get me outta here!!!"
+dialog_text = "Are you sure you want to quit?"
+cancel_button_text = "No, don't quit..."

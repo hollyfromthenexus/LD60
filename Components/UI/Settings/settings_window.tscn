@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://bf1hu2g7ybqvm"]
+
+[ext_resource type="Theme" uid="uid://cmy5ixx8f2rb0" path="res://Components/UI/global_theme.tres" id="1_yoagh"]
+[ext_resource type="Script" uid="uid://brr7ckh6r1oat" path="res://Components/UI/Settings/SettingsWindow.cs" id="2_wxois"]
+[ext_resource type="Script" uid="uid://bmalf13eigc4i" path="res://Components/UI/Settings/SettingsSlider.cs" id="3_bjgqb"]
+
+[node name="SettingsWindow" type="AcceptDialog" unique_id=1480699712]
+oversampling_override = 1.0
+title = "Settings"
+initial_position = 1
+size = Vector2i(512, 458)
+visible = true
+theme = ExtResource("1_yoagh")
+script = ExtResource("2_wxois")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1496736932]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"SettingsVBox"
+
+[node name="MouseSettings" type="VBoxContainer" parent="VBoxContainer" unique_id=1973323127]
+layout_mode = 2
+
+[node name="MouseSettingsLabel" type="Label" parent="VBoxContainer/MouseSettings" unique_id=1680778120]
+layout_mode = 2
+text = "Mouse Settings"
+horizontal_alignment = 1
+
+[node name="Sensitivity" type="VBoxContainer" parent="VBoxContainer/MouseSettings" unique_id=228717994]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MouseSettings/Sensitivity" unique_id=56019966]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MouseSettings/Sensitivity/HBoxContainer" unique_id=1741740344]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mouse Sensitivity"
+
+[node name="Value" type="Label" parent="VBoxContainer/MouseSettings/Sensitivity/HBoxContainer" unique_id=1866219762]
+layout_mode = 2
+text = "1.0"
+horizontal_alignment = 2
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/MouseSettings/Sensitivity" unique_id=837702760 node_paths=PackedStringArray("Label")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 3.0
+step = 0.1
+value = 1.0
+script = ExtResource("3_bjgqb")
+SettingName = "mouseSensitivity"
+DefaultValue = 1.0
+Label = NodePath("../HBoxContainer/Value")
+
+[node name="InvertXButton" type="CheckButton" parent="VBoxContainer/MouseSettings" unique_id=2058106221]
+layout_mode = 2
+text = "Invert Mouse Horizontal"
+
+[node name="InvertYButton" type="CheckButton" parent="VBoxContainer/MouseSettings" unique_id=1587958813]
+layout_mode = 2
+text = "Invert Mouse Vertical"
+
+[node name="AudioSettings" type="VBoxContainer" parent="VBoxContainer" unique_id=247931662]
+layout_mode = 2
+
+[node name="AudioSettingsLabel" type="Label" parent="VBoxContainer/AudioSettings" unique_id=212981159]
+layout_mode = 2
+text = "Volume Settings"
+horizontal_alignment = 1
+
+[node name="GlobalVolume" type="VBoxContainer" parent="VBoxContainer/AudioSettings" unique_id=1377919641]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/AudioSettings/GlobalVolume" unique_id=1898619207]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/AudioSettings/GlobalVolume/HBoxContainer" unique_id=1756814693]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Global Volume"
+
+[node name="Value" type="Label" parent="VBoxContainer/AudioSettings/GlobalVolume/HBoxContainer" unique_id=795583901]
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 2
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/AudioSettings/GlobalVolume" unique_id=1632139660 node_paths=PackedStringArray("Label")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+script = ExtResource("3_bjgqb")
+SettingName = "globalVolume"
+DefaultValue = 75.0
+Label = NodePath("../HBoxContainer/Value")
+FormatString = "{0}%"
+
+[node name="MusicVolume" type="VBoxContainer" parent="VBoxContainer/AudioSettings" unique_id=233462044]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/AudioSettings/MusicVolume" unique_id=1383932691]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/AudioSettings/MusicVolume/HBoxContainer" unique_id=1861894271]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Music Volume"
+
+[node name="Value" type="Label" parent="VBoxContainer/AudioSettings/MusicVolume/HBoxContainer" unique_id=1412285320]
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 2
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/AudioSettings/MusicVolume" unique_id=2019419937 node_paths=PackedStringArray("Label")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+script = ExtResource("3_bjgqb")
+SettingName = "musicVolume"
+DefaultValue = 75.0
+Label = NodePath("../HBoxContainer/Value")
+FormatString = "{0}%"
+
+[node name="SfxVolume" type="VBoxContainer" parent="VBoxContainer/AudioSettings" unique_id=1918743142]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/AudioSettings/SfxVolume" unique_id=490007995]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/AudioSettings/SfxVolume/HBoxContainer" unique_id=894632343]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SFX Volume"
+
+[node name="Value" type="Label" parent="VBoxContainer/AudioSettings/SfxVolume/HBoxContainer" unique_id=1782549629]
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 2
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/AudioSettings/SfxVolume" unique_id=1413142263 node_paths=PackedStringArray("Label")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+script = ExtResource("3_bjgqb")
+SettingName = "musicVolume"
+DefaultValue = 75.0
+Label = NodePath("../HBoxContainer/Value")
+FormatString = "{0}%"

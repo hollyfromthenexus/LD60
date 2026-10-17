@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://ba1hef4nx7mvl"]
+
+[ext_resource type="Script" uid="uid://c7ev5nawtu1mh" path="res://AppStates/MainMenu/MainMenu.cs" id="1_5mhnf"]
+[ext_resource type="Theme" uid="uid://dtfyldcsxidtv" path="res://AppStates/MainMenu/main_menu_theme.tres" id="2_h8ui1"]
+[ext_resource type="Script" uid="uid://cjunef7pdjxcl" path="res://Components/UI/Settings/SettingsButton.cs" id="3_dhxb2"]
+[ext_resource type="PackedScene" uid="uid://bf1hu2g7ybqvm" path="res://Components/UI/Settings/settings_window.tscn" id="4_3ktij"]
+[ext_resource type="PackedScene" uid="uid://3whicqjgfrqx" path="res://Components/UI/Exit/exit_button.tscn" id="5_5mhnf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_naqgj"]
+font_size = 64
+
+[node name="MainMenu" type="CanvasLayer" unique_id=1078813451 node_paths=PackedStringArray("StartGameButton")]
+layer = 100
+script = ExtResource("1_5mhnf")
+StartGameButton = NodePath("MarginContainer/VBoxContainer/HBoxContainer/Buttons/StartGame")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=820695788]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=456358244]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1945143771]
+layout_mode = 2
+text = "GAME TITLE"
+label_settings = SubResource("LabelSettings_naqgj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1090914549]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Buttons" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=975606026]
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("2_h8ui1")
+
+[node name="StartGame" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons" unique_id=1698454846]
+layout_mode = 2
+theme = ExtResource("2_h8ui1")
+text = "Start Game"
+
+[node name="Settings" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons" unique_id=2103921126]
+layout_mode = 2
+theme = ExtResource("2_h8ui1")
+text = "Settings"
+script = ExtResource("3_dhxb2")
+SettingsWindowScene = ExtResource("4_3ktij")
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons" unique_id=1637939710]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="Exit" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons" unique_id=710023940 instance=ExtResource("5_5mhnf")]
+layout_mode = 2

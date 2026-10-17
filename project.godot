@@ -28,6 +28,7 @@ HUD="*uid://bk75mubxovxck"
 MouseLock="*uid://cgvu3pe1tcdjn"
 PlayerService="*uid://c8stmq6jpgh0q"
 DovedraftConfigService="*uid://brrpom1dk5367"
+SettingsService="*uid://bv3ydp7u1a0rv"
 AppService="*uid://c3251xwwdnv1i"
 
 [display]

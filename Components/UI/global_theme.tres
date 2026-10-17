@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://cmy5ixx8f2rb0"]
+
+[resource]
+SettingsGrid/base_type = &"GridContainer"
+SettingsGrid/constants/h_separation = 32
+SettingsGrid/constants/v_separation = 4
+SettingsVBox/base_type = &"VBoxContainer"
+SettingsVBox/constants/separation = 16

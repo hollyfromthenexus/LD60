@@ -2,18 +2,16 @@
 
 [ext_resource type="Script" uid="uid://cusg5yph0jp5v" path="res://Services/App/AppService.cs" id="1_pcosh"]
 [ext_resource type="PackedScene" uid="uid://4kbtjq44gmhp" path="res://AppStates/SplashScreen/splash_screen_app_state.tscn" id="2_8q70o"]
-[ext_resource type="Script" uid="uid://bucqmo72wckfp" path="res://AppStates/MainMenuAppState.cs" id="3_y61qk"]
-[ext_resource type="Script" uid="uid://cjn5bkwyk1jtk" path="res://AppStates/InGameAppState.cs" id="4_7n6q7"]
+[ext_resource type="PackedScene" uid="uid://bxn31bc3qhv1m" path="res://AppStates/MainMenu/main_menu_app_state.tscn" id="3_8q70o"]
+[ext_resource type="PackedScene" uid="uid://rnyarxsi75iu" path="res://AppStates/InGame/in_game_app_state.tscn" id="4_y61qk"]
 
 [node name="AppService" type="Node" unique_id=44568755 node_paths=PackedStringArray("AllStates", "InitialState")]
 script = ExtResource("1_pcosh")
 AllStates = [NodePath("SplashScreen"), NodePath("MainMenu"), NodePath("InGame")]
-InitialState = NodePath("SplashScreen")
+InitialState = NodePath("MainMenu")
 
 [node name="SplashScreen" parent="." unique_id=651420694 instance=ExtResource("2_8q70o")]
 
-[node name="MainMenu" type="Node" parent="." unique_id=793466075]
-script = ExtResource("3_y61qk")
+[node name="MainMenu" parent="." unique_id=552116245 instance=ExtResource("3_8q70o")]
 
-[node name="InGame" type="Node" parent="." unique_id=527693834]
-script = ExtResource("4_7n6q7")
+[node name="InGame" parent="." unique_id=1699734271 instance=ExtResource("4_y61qk")]

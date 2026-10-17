@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bxn31bc3qhv1m"]
+
+[ext_resource type="Script" uid="uid://bucqmo72wckfp" path="res://AppStates/MainMenu/MainMenuAppState.cs" id="1_nkhyl"]
+[ext_resource type="PackedScene" uid="uid://ba1hef4nx7mvl" path="res://AppStates/MainMenu/main_menu.tscn" id="2_3awnh"]
+
+[node name="MainMenu" type="Node" unique_id=552116245]
+script = ExtResource("1_nkhyl")
+MainMenuScene = ExtResource("2_3awnh")

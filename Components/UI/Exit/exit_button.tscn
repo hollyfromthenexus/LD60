@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://3whicqjgfrqx"]
+
+[ext_resource type="Theme" uid="uid://dtfyldcsxidtv" path="res://AppStates/MainMenu/main_menu_theme.tres" id="1_8ljmt"]
+[ext_resource type="Script" uid="uid://dtlti7t3qruae" path="res://Components/UI/Exit/ExitButton.cs" id="2_5vx5m"]
+[ext_resource type="PackedScene" uid="uid://bqs081nlvdfmj" path="res://Components/UI/Exit/exit_confirmation_dialog.tscn" id="3_13dwn"]
+
+[node name="Exit" type="Button" unique_id=710023940]
+theme = ExtResource("1_8ljmt")
+text = "Exit"
+script = ExtResource("2_5vx5m")
+ExitConfirmationDialogScene = ExtResource("3_13dwn")

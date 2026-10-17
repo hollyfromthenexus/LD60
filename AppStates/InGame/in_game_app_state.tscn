@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://rnyarxsi75iu"]
+
+[ext_resource type="Script" uid="uid://cjn5bkwyk1jtk" path="res://AppStates/InGame/InGameAppState.cs" id="1_bt65i"]
+
+[node name="InGame" type="Node" unique_id=1699734271]
+script = ExtResource("1_bt65i")

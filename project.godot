@@ -240,6 +240,10 @@ debug_saveload_load={
 )]
 }
 
+[layer_names]
+
+3d_physics/layer_10="Player"
+
 [physics]
 
 common/physics_ticks_per_second=33

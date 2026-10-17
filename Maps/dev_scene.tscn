@@ -13,6 +13,7 @@
 [ext_resource type="Material" uid="uid://ctsxcrgii61sf" path="res://trenchbroom/textures/wood-4.tres" id="10_08uat"]
 [ext_resource type="Texture2D" uid="uid://65axoi0v1gjd" path="res://trenchbroom/textures/rainbow-2.png" id="11_ne008"]
 [ext_resource type="PackedScene" uid="uid://bf4irpx2abaum" path="res://dev/dev_win.tscn" id="13_08uat"]
+[ext_resource type="PackedScene" uid="uid://caig8rbh5hb2" path="res://Components/MemoryStick/memory_stick.tscn" id="14_127kd"]
 
 [sub_resource type="Environment" id="Environment_lg3yx"]
 
@@ -368,3 +369,6 @@ omni_attenuation = 0.06
 
 [node name="DevWin" parent="." unique_id=2046562557 instance=ExtResource("13_08uat")]
 transform = Transform3D(0.51130486, 0, 0.8593994, 0, 1, 0, -0.8593994, 0, 0.51130486, 8.74943, 0.5, 11.010105)
+
+[node name="MemoryStick" parent="." unique_id=1320072689 instance=ExtResource("14_127kd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.883787, 0.49673793, 8.05081)

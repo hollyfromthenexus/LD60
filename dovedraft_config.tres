@@ -5,11 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://bxn31bc3qhv1m" path="res://AppStates/MainMenu/main_menu_app_state.tscn" id="2_eyktm"]
 [ext_resource type="PackedScene" uid="uid://rnyarxsi75iu" path="res://AppStates/InGame/in_game_app_state.tscn" id="3_jicb5"]
 [ext_resource type="PackedScene" uid="uid://bwf6hn1yhdquf" path="res://AppStates/OutOfMemory/out_of_memory_app_state.tscn" id="4_eyktm"]
+[ext_resource type="PackedScene" uid="uid://brm63tivqjlej" path="res://AppStates/GameWin/game_win_app_state.tscn" id="5_jicb5"]
 [ext_resource type="Script" uid="uid://ojuhw6b4sxij" path="res://Services/LD60Config.cs" id="5_xx1ft"]
 
 [resource]
 script = ExtResource("5_xx1ft")
-AppStates = Array[PackedScene]([ExtResource("1_v56nd"), ExtResource("2_eyktm"), ExtResource("3_jicb5"), ExtResource("4_eyktm")])
+AppStates = Array[PackedScene]([ExtResource("1_v56nd"), ExtResource("2_eyktm"), ExtResource("3_jicb5"), ExtResource("4_eyktm"), ExtResource("5_jicb5")])
 InitialAppState = "InGame"
 GameYarnProject = ExtResource("1_ug4nl")
 metadata/_custom_type_script = "uid://dvb54fm10xosf"

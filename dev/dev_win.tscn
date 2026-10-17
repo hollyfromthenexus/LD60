@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bf4irpx2abaum"]
+
+[ext_resource type="Script" uid="uid://mnfegsvt0rtj" path="res://dev/DevWinInteractable.cs" id="1_bcl03"]
+[ext_resource type="Material" uid="uid://b5m31d7s53xi0" path="res://trenchbroom/textures/placeholder/orange.tres" id="2_ew58i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a0njm"]
+size = Vector3(0.5, 1, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_w5ynd"]
+material = ExtResource("2_ew58i")
+size = Vector3(0.5, 1, 0.5)
+
+[node name="DevWin" type="StaticBody3D" unique_id=2046562557]
+
+[node name="Interactable" type="Node" parent="." unique_id=578689216]
+script = ExtResource("1_bcl03")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=698194915]
+shape = SubResource("BoxShape3D_a0njm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=178643849]
+mesh = SubResource("BoxMesh_w5ynd")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=696704505]
+transform = Transform3D(1, 0, 0, 0, 0.94795614, 0.31840095, 0, -0.31840095, 0.94795614, 0, 0.47572756, 0.33738667)
+text = "WIN GAME"

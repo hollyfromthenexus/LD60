@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dpygs6v42dwbg"]
+
+[ext_resource type="Script" uid="uid://dbwu2y77j0bc7" path="res://AppStates/GameWin/GameWin.cs" id="1_ecbu6"]
+[ext_resource type="PackedScene" uid="uid://3whicqjgfrqx" path="res://Components/UI/Exit/exit_button.tscn" id="2_om7tb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_r18y4"]
+font_size = 64
+font_color = Color(0, 0, 0, 1)
+
+[node name="GameWin" type="CanvasLayer" unique_id=939577087]
+script = ExtResource("1_ecbu6")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1676822764]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=1466219469]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "YOU WIN"
+label_settings = SubResource("LabelSettings_r18y4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exit" parent="ColorRect" unique_id=710023940 instance=ExtResource("2_om7tb")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -99.0
+offset_top = -136.0
+offset_right = 99.0
+offset_bottom = -83.0
+grow_horizontal = 2
+grow_vertical = 0

@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://dpygs6v42dwbg"]
-
-[ext_resource type="Script" uid="uid://dbwu2y77j0bc7" path="res://Services/GameWin/GameWin.cs" id="1_ecbu6"]
-
-[node name="GameWin" type="CanvasLayer" unique_id=939577087]
-script = ExtResource("1_ecbu6")

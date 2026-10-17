@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cmtlt0y7itrmv"]
+
+[ext_resource type="Script" uid="uid://dcwm0oij6is3o" path="res://Services/LoadingScreen/LoadingScreenService.cs" id="1_c775q"]
+[ext_resource type="Texture2D" uid="uid://2n86nogn55kq" path="res://Services/LoadingScreen/load-spinner.png" id="2_sutsk"]
+
+[node name="LoadingScreenService" type="CanvasLayer" unique_id=1425059310 node_paths=PackedStringArray("RootControl", "Spinner")]
+layer = -100
+script = ExtResource("1_c775q")
+TransitionInEase = 2.0
+TransitionOutEase = 0.5
+RootControl = NodePath("Control")
+Spinner = NodePath("Control/TextureRect")
+
+[node name="Control" type="Control" parent="." unique_id=1419746675]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="Control" unique_id=665687970]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=138896096]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -173.0
+offset_top = -168.0
+offset_right = -45.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(64, 64)
+texture = ExtResource("2_sutsk")
+flip_h = true

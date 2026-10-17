@@ -1,7 +1,10 @@
-[gd_scene format=3 uid="uid://bbc2qgwscybr1"]
+[gd_scene format=4 uid="uid://bbc2qgwscybr1"]
 
 [ext_resource type="Script" uid="uid://8xycjaq4kges" path="res://addons/DoveDraft/Services/Maps/Map.cs" id="1_mtlhs"]
 [ext_resource type="PackedScene" uid="uid://cl63usgbt38ls" path="res://addons/DoveDraft/Services/Player/player.tscn" id="1_xd2ty"]
+[ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="3_irylu"]
+[ext_resource type="Resource" uid="uid://dot87iw3dt33r" path="res://trenchbroom/FD60_map_settings.tres" id="4_2oirn"]
+[ext_resource type="Texture2D" uid="uid://bo6fnrlsklb4l" path="res://trenchbroom/textures/wood-2.png" id="5_ptnrc"]
 
 [sub_resource type="Environment" id="Environment_lg3yx"]
 
@@ -31,6 +34,29 @@ size = Vector3(2, 8, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
 size = Vector3(2, 8, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0t2xe"]
+albedo_texture = ExtResource("5_ptnrc")
+metallic_specular = 0.0
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_b3kru"]
+_surfaces = [{
+"aabb": AABB(-2, -0.5, -2, 4, 1, 4),
+"attribute_data": PackedByteArray("AAAAvwAAAL4AAAA/AAAAvgAAAD8AAAA+AAAAvwAAAD4AAAA/AAAAPgAAAL8AAAA+AAAAvwAAAL4AAAA/AAAAvgAAAL8AAAA/AAAAvwAAAL8AAAA/AAAAvwAAAD8AAAA/AAAAPwAAAD8AAAC/AAAAPwAAAL8AAAC/AAAAPwAAAL8AAAC/AAAAvgAAAD8AAAC+AAAAPwAAAD4AAAC/AAAAPgAAAD8AAAA+AAAAvwAAAD4AAAC/AAAAvgAAAD8AAAC+"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"),
+"material": SubResource("StandardMaterial3D_0t2xe"),
+"name": "wood-2",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAQAAAAD8AAADAAAAAwAAAAD8AAADAAAAAwAAAAL8AAADAAAAAQAAAAL8AAADAAAAAwAAAAL8AAABAAAAAwAAAAL8AAADAAAAAwAAAAD8AAADAAAAAwAAAAD8AAABAAAAAwAAAAL8AAABAAAAAQAAAAL8AAABAAAAAQAAAAL8AAADAAAAAwAAAAL8AAADAAAAAwAAAAD8AAABAAAAAwAAAAD8AAADAAAAAQAAAAD8AAADAAAAAQAAAAD8AAABAAAAAQAAAAD8AAABAAAAAQAAAAD8AAADAAAAAQAAAAL8AAADAAAAAQAAAAL8AAABAAAAAQAAAAL8AAABAAAAAwAAAAL8AAABAAAAAwAAAAD8AAABAAAAAQAAAAD8AAABA/////wAA/7//////AAD/v/////8AAP+//////wAA/78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+/")
+}]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_blfsd"]
+points = PackedVector3Array(2, 0.5, 2, 2, -0.5, 2, -2, 0.5, 2, -2, -0.5, 2, 2, 0.5, -2, 2, -0.5, -2, -2, 0.5, -2, -2, -0.5, -2)
 
 [node name="Main" type="WorldEnvironment" unique_id=297841384]
 environment = SubResource("Environment_lg3yx")
@@ -171,3 +197,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.741368, 1.7573867, -4.52380
 light_color = Color(0, 0, 1, 1)
 omni_range = 9.785
 omni_attenuation = 0.06
+
+[node name="FuncGodotMap" type="Node3D" parent="." unique_id=1027184231]
+script = ExtResource("3_irylu")
+local_map_file = "uid://el7tilsu5wh8"
+map_settings = ExtResource("4_2oirn")
+metadata/_custom_type_script = "uid://cwu5cf7a0awcd"
+
+[node name="entity_0_worldspawn" type="StaticBody3D" parent="FuncGodotMap" unique_id=1202392251]
+collision_mask = 0
+
+[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap/entity_0_worldspawn" unique_id=1359293341]
+mesh = SubResource("ArrayMesh_b3kru")
+
+[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn" unique_id=1134819747]
+shape = SubResource("ConvexPolygonShape3D_blfsd")

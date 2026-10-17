@@ -5,11 +5,15 @@ public interface IMemoryService : IService
 {
     public bool Visible { get; set; }
 
-    public bool IsTracking { get; set; }
+    public bool IsTracking { get; }
 
     public float Capacity { get; }
 
     public float Current { get; }
+
+    public void SetIsTracking(string key, bool isTracking, int priority);
+
+    public void ClearIsTracking(string key);
 
     public void Reset();
 }
@@ -37,15 +41,8 @@ public partial class MemoryService : CanvasLayer, IMemoryService
     [Export]
     private Label Label { get; set; }
 
-    public bool IsTracking
-    {
-        get => isTrackingInternal;
-        set
-        {
-            previousRotation = Services.Player?.Current?.HeadNode.Rotation ?? Vector3.Zero;
-            isTrackingInternal = value;
-        }
-    }
+    public bool IsTracking => isTrackingPref.Value;
+
     public float Capacity { get; private set; }
     public float Current { get; private set; }
 
@@ -53,7 +50,7 @@ public partial class MemoryService : CanvasLayer, IMemoryService
     //	Private Data
     //
 
-    private bool isTrackingInternal = false;
+    private PrioritizedPref<string, bool> isTrackingPref = new(false);
 
     private Vector3 previousRotation;
 
@@ -65,14 +62,21 @@ public partial class MemoryService : CanvasLayer, IMemoryService
     {
         Reset();
 
+        Services.Pause.OnPauseChanged += OnPauseChanged;
         Services.Map.OnMapLoadStatusChanged += OnMapLoadStatusChanged;
         Services.Register<IMemoryService>(this);
+    }
+
+    public override void _Ready()
+    {
+        isTrackingPref.OnValueChanged += OnIsTrackingChanged;
     }
 
     public override void _ExitTree()
     {
         Services.Unregister<IMemoryService>();
         Services.Map.OnMapLoadStatusChanged -= OnMapLoadStatusChanged;
+        Services.Pause.OnPauseChanged -= OnPauseChanged;
     }
 
     //
@@ -95,8 +99,14 @@ public partial class MemoryService : CanvasLayer, IMemoryService
     //	Public Methods
     //
 
+    public void SetIsTracking(string key, bool isTracking, int priority) =>
+        isTrackingPref.SetPreference(key, isTracking, priority);
+
+    public void ClearIsTracking(string key) => isTrackingPref.ClearPreference(key);
+
     public void Reset()
     {
+        isTrackingPref.ClearAllPreferences();
         Capacity = InitialCapacity;
         Current = 0;
 
@@ -114,7 +124,7 @@ public partial class MemoryService : CanvasLayer, IMemoryService
         Current += memJustUsed;
         if (Current >= Capacity)
         {
-            IsTracking = false;
+            isTrackingPref.ClearAllPreferences();
             OutOfMemory();
         }
     }
@@ -144,15 +154,40 @@ public partial class MemoryService : CanvasLayer, IMemoryService
         Services.App.TransitionToState(OutOfMemoryAppStateName);
     }
 
+    private void OnIsTrackingChanged(bool newValue, string ownerKey)
+    {
+        previousRotation = Services.Player?.Current?.HeadNode.Rotation ?? Vector3.Zero;
+    }
+
+    /// <summary>
+    /// Pause service prefers that memory tracking stops.
+    /// </summary>
+    /// <param name="isPaused"></param>
+    private void OnPauseChanged(bool isPaused)
+    {
+        if (isPaused)
+        {
+            SetIsTracking(nameof(PauseService), false, 15);
+        }
+        else
+        {
+            ClearIsTracking(nameof(PauseService));
+        }
+    }
+
+    /// <summary>
+    /// Map service prefers that memory tracking stops.
+    /// </summary>
+    /// <param name="status"></param>
     private void OnMapLoadStatusChanged(MapLoadStatus status)
     {
         switch (status)
         {
             case MapLoadStatus.Starting:
-                IsTracking = false;
+                SetIsTracking(nameof(MapService), false, 20);
                 break;
             case MapLoadStatus.Loaded:
-                IsTracking = true;
+                ClearIsTracking(nameof(MapService));
                 break;
         }
     }

@@ -1,9 +1,14 @@
 using System;
 using DoveDraft;
 using Godot;
+using static IPauseService;
 
 public interface IPauseService : IService
 {
+    public delegate void PauseChangedDelegate(bool isPaused);
+
+    public event PauseChangedDelegate OnPauseChanged;
+
     public bool IsPaused { get; }
 
     public bool CanPause { get; }
@@ -19,12 +24,29 @@ public interface IPauseService : IService
 
 public partial class PauseService : CanvasLayer, IPauseService
 {
+    public event PauseChangedDelegate OnPauseChanged;
+
     [Export]
     private Button ResumeButton { get; set; }
 
-    public bool IsPaused { get; private set; }
+    public bool IsPaused
+    {
+        get => isPausedInternal;
+        private set
+        {
+            if (value == isPausedInternal)
+            {
+                return;
+            }
+
+            isPausedInternal = value;
+            OnPauseChanged?.Invoke(value);
+        }
+    }
 
     public bool CanPause => canPausePreference.Value;
+
+    private bool isPausedInternal;
 
     private readonly PrioritizedPref<string, bool> canPausePreference = new(false);
 

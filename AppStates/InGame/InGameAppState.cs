@@ -12,6 +12,7 @@ public partial class InGameAppState : AppState
         Services.Pause.SetCanPause(nameof(InGameAppState), true, 0);
 
         Services.Memory.Reset();
+        Services.Memory.SetIsTracking(nameof(InGameAppState), true, 0);
 
         // Load and start the first map
         LaunchWorld();
@@ -21,6 +22,7 @@ public partial class InGameAppState : AppState
     {
         KillWorld();
 
+        Services.Memory.ClearIsTracking(nameof(InGameAppState));
         Services.Player.ClearPlayer();
 
         Services.Pause.ClearCanPause(nameof(InGameAppState));

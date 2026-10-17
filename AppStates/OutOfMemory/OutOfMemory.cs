@@ -11,7 +11,7 @@ public partial class OutOfMemory : CanvasLayer
 
     public async GDTask CrashRoutine(CancellationToken token)
     {
-        Log.For<SplashScreenAppState>("Out of memory routine started");
+        Log.For<OutOfMemory>("Out of memory routine started");
         Label.Visible = false;
 
         await GDTask.Delay(500, token);

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://brm63tivqjlej"]
+
+[ext_resource type="Script" uid="uid://cw76wvbt718wb" path="res://Services/GameWin/GameWinAppState.cs" id="1_bmdc0"]
+
+[node name="GameWin" type="Node" unique_id=493700879]
+script = ExtResource("1_bmdc0")

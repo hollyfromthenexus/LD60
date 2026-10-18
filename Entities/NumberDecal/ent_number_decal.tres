@@ -10,6 +10,10 @@ target_map_editor = 1
 rotation_offset = Vector3(0, 180, 0)
 scene_file = ExtResource("2_67tfw")
 classname = "ent_number_decal"
+class_properties = Dictionary[String, Variant]({
+"digit": 0,
+"index": 0
+})
 meta_properties = Dictionary[String, Variant]({
 "color": Color(0.8, 0.8, 0.8, 1),
 "model": "{\"path\": \"trenchbroom/generated_models/ent_number_decal.glb\", \"scale\": 32.0 }",

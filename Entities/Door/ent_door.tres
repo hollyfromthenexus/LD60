@@ -9,7 +9,6 @@ script = ExtResource("2_bqh1q")
 target_map_editor = 1
 rotation_offset = Vector3(0, 180, 0)
 scene_file = ExtResource("2_ajh03")
-apply_rotation_on_map_build = false
 classname = "ent_door"
 class_properties = Dictionary[String, Variant]({
 "memory_usage": 256

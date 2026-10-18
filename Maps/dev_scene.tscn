@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://65axoi0v1gjd" path="res://trenchbroom/textures/rainbow-2.png" id="11_ne008"]
 [ext_resource type="PackedScene" uid="uid://bf4irpx2abaum" path="res://dev/dev_win.tscn" id="13_08uat"]
 [ext_resource type="PackedScene" uid="uid://caig8rbh5hb2" path="res://Components/MemoryStick/memory_stick.tscn" id="14_127kd"]
+[ext_resource type="PackedScene" uid="uid://ca0mvxdojgwjn" path="res://Components/Door/door.tscn" id="15_su1mi"]
 
 [sub_resource type="Environment" id="Environment_lg3yx"]
 
@@ -372,6 +373,7 @@ transform = Transform3D(0.9999979, 0, 0.0021023452, 0, 1, 0, -0.0021023452, 0, 0
 
 [node name="MemoryStick" parent="." unique_id=1320072689 instance=ExtResource("14_127kd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0077765, 0.49673793, 17.558039)
+UpgradeCapacity = 128
 
 [node name="Label3D" type="Label3D" parent="." unique_id=508018896]
 transform = Transform3D(0.9546866, 0.29501858, 0.039214373, -0.29477003, 0.95549154, -0.0121078715, -0.041041046, 0, 0.99915755, 12.687426, 5.1936274, 0.23220754)
@@ -380,3 +382,7 @@ WIN GAME "
 font_size = 149
 outline_size = 50
 horizontal_alignment = 2
+
+[node name="Door" parent="." unique_id=1073097031 instance=ExtResource("15_su1mi")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.840331, -1.1920929e-07, 15.981457)
+MemoryUsage = 64.0

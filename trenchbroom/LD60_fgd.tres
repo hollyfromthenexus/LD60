@@ -4,10 +4,11 @@
 [ext_resource type="Resource" uid="uid://crgpdahjaj" path="res://addons/func_godot/fgd/func_godot_fgd.tres" id="1_felwi"]
 [ext_resource type="Resource" uid="uid://1us63yg3s3xy" path="res://Entities/MemoryStick/ent_memorystick.tres" id="2_44tpt"]
 [ext_resource type="Resource" uid="uid://c6alqxaui4e1i" path="res://Entities/Door/ent_door.tres" id="3_i6j3e"]
+[ext_resource type="Resource" uid="uid://bksal8poauhb7" path="res://Entities/Player/player.tres" id="4_t3iwa"]
 
 [resource]
 script = ExtResource("1_eahcj")
 fgd_name = "LD60"
 base_fgd_files = Array[Resource]([ExtResource("1_felwi")])
-entity_definitions = Array[Resource]([ExtResource("2_44tpt"), ExtResource("3_i6j3e")])
+entity_definitions = Array[Resource]([ExtResource("2_44tpt"), ExtResource("3_i6j3e"), ExtResource("4_t3iwa")])
 metadata/_custom_type_script = "uid://drlmgulwbjwqu"

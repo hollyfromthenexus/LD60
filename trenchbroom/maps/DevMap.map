@@ -422,3 +422,8 @@
 "origin" "568 184 0"
 "memory_usage" "32"
 }
+// entity 4
+{
+"classname" "player"
+"origin" "280 216 120"
+}

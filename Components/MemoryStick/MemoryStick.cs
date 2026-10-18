@@ -18,7 +18,7 @@ public partial class MemoryStick : Area3D
             return;
         }
 
-        Services.Memory.CollectStick(UpgradeCapacity);
+        Services.Memory.AddMemory(UpgradeCapacity);
         QueueFree();
     }
 }

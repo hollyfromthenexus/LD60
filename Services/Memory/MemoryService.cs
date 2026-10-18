@@ -11,7 +11,9 @@ public interface IMemoryService : IService
 
     public float Current { get; }
 
-    public void CollectStick(int memory);
+    public void AddMemory(int memory);
+
+    public void EatMemory(float memory);
 
     public void SetIsTracking(string key, bool isTracking, int priority);
 
@@ -101,9 +103,14 @@ public partial class MemoryService : CanvasLayer, IMemoryService
     //	Public Methods
     //
 
-    public void CollectStick(int memory)
+    public void AddMemory(int memory)
     {
         Capacity += memory;
+    }
+
+    public void EatMemory(float memory)
+    {
+        Current += memory;
     }
 
     public void SetIsTracking(string key, bool isTracking, int priority) =>

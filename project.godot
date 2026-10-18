@@ -32,14 +32,12 @@ LoadingScreenService="*uid://cmtlt0y7itrmv"
 PauseService="*uid://bx6i6f7pykpvr"
 MemoryService="*uid://7k7ke61fctn2"
 AppService="*uid://cusg5yph0jp5v"
-flowerwall_crt="*res://addons/flowerwall_crt/scenes/flowerwall_crt.tscn"
 
 [display]
 
-window/size/viewport_width=1920
+window/size/viewport_width=1440
 window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [dotnet]
 

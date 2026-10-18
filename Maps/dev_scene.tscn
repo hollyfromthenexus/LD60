@@ -368,7 +368,15 @@ omni_range = 9.785
 omni_attenuation = 0.06
 
 [node name="DevWin" parent="." unique_id=2046562557 instance=ExtResource("13_08uat")]
-transform = Transform3D(0.51130486, 0, 0.8593994, 0, 1, 0, -0.8593994, 0, 0.51130486, 8.74943, 0.5, 11.010105)
+transform = Transform3D(0.9999979, 0, 0.0021023452, 0, 1, 0, -0.0021023452, 0, 0.9999979, 3.2761304, 7.4897776, -5.740662)
 
 [node name="MemoryStick" parent="." unique_id=1320072689 instance=ExtResource("14_127kd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.883787, 0.49673793, 8.05081)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0077765, 0.49673793, 17.558039)
+
+[node name="Label3D" type="Label3D" parent="." unique_id=508018896]
+transform = Transform3D(0.9546866, 0.29501858, 0.039214373, -0.29477003, 0.95549154, -0.0121078715, -0.041041046, 0, 0.99915755, 12.687426, 5.1936274, 0.23220754)
+text = "<-----------------------------
+WIN GAME "
+font_size = 149
+outline_size = 50
+horizontal_alignment = 2

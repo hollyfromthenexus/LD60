@@ -3,6 +3,9 @@ using Godot;
 
 public partial class MemoryStick : Area3D
 {
+    [Export]
+    public int UpgradeCapacity { get; private set; } = 1024;
+
     public override void _Ready()
     {
         BodyEntered += OnBodyEntered;
@@ -15,6 +18,7 @@ public partial class MemoryStick : Area3D
             return;
         }
 
-        Log.For<MemoryStick>("GA");
+        Services.Memory.CollectStick(UpgradeCapacity);
+        QueueFree();
     }
 }

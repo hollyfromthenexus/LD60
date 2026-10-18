@@ -7,9 +7,11 @@ public interface IMemoryService : IService
 
     public bool IsTracking { get; }
 
-    public float Capacity { get; }
+    public int Capacity { get; }
 
     public float Current { get; }
+
+    public void CollectStick(int memory);
 
     public void SetIsTracking(string key, bool isTracking, int priority);
 
@@ -24,7 +26,7 @@ public partial class MemoryService : CanvasLayer, IMemoryService
     private string OutOfMemoryAppStateName { get; set; } = "OutOfMemory";
 
     [Export]
-    private float InitialCapacity { get; set; } = 1024;
+    private int InitialCapacity { get; set; } = 1024;
 
     [Export]
     private float MovementCost { get; set; } = 1;
@@ -43,7 +45,7 @@ public partial class MemoryService : CanvasLayer, IMemoryService
 
     public bool IsTracking => isTrackingPref.Value;
 
-    public float Capacity { get; private set; }
+    public int Capacity { get; private set; }
     public float Current { get; private set; }
 
     //
@@ -98,6 +100,11 @@ public partial class MemoryService : CanvasLayer, IMemoryService
     //
     //	Public Methods
     //
+
+    public void CollectStick(int memory)
+    {
+        Capacity += memory;
+    }
 
     public void SetIsTracking(string key, bool isTracking, int priority) =>
         isTrackingPref.SetPreference(key, isTracking, priority);

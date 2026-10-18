@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDPointClass" format=3 uid="uid://16v1sxl20tmi"]
+
+[ext_resource type="Script" uid="uid://d1nwwgcrner8b" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="1_4t4oq"]
+[ext_resource type="PackedScene" uid="uid://dogjuqndeofax" path="res://Entities/AmbientLight/fire_light.tscn" id="2_4t4oq"]
+[ext_resource type="Script" uid="uid://cxsqwtsqd8w33" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class.gd" id="3_pln2y"]
+
+[resource]
+script = ExtResource("3_pln2y")
+scene_file = ExtResource("2_4t4oq")
+classname = "light_fire"
+metadata/_custom_type_script = "uid://cxsqwtsqd8w33"

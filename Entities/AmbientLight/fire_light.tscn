@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://dogjuqndeofax"]
+
+[sub_resource type="Curve" id="Curve_p3j8w"]
+_data = [Vector2(0, 0), 0.0, 12.697842, 0, 0, Vector2(0.11898017, 1), 0.07255946, 0.07255946, 0, 0, Vector2(1, 0), -1.4108711, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_nyree"]
+curve = SubResource("Curve_p3j8w")
+
+[sub_resource type="Curve" id="Curve_nik3o"]
+_data = [Vector2(0, 0), 0.0, 11.275684, 0, 0, Vector2(0.031161472, 0.8273381), 5.4419317, 5.4419317, 0, 0, Vector2(0.10764873, 0.78417265), 1.7926371, 1.7926371, 0, 0, Vector2(0.62889516, 0.8705036), 0.6722389, 0.6722389, 0, 0, Vector2(1, 0), -0.036279727, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_gchr3"]
+curve = SubResource("Curve_nik3o")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r6ol3"]
+emission_shape_scale = Vector3(0.4, 0.4, 0.4)
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector3(0, 0.1, 0)
+scale_min = 0.049999997
+scale_max = 0.19999999
+scale_curve = SubResource("CurveTexture_gchr3")
+color = Color(0.532, 0.6878, 0.76, 1)
+alpha_curve = SubResource("CurveTexture_nyree")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xn38x"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_xn38x"]
+material = SubResource("StandardMaterial3D_xn38x")
+
+[sub_resource type="Curve" id="Curve_0bwbd"]
+_data = [Vector2(0, 0), 0.0, 0.20731188, 0, 0, Vector2(0.48725212, 1), 0.07255946, 0.07255946, 0, 0, Vector2(1, 0), -0.23442224, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_giqbi"]
+curve = SubResource("Curve_0bwbd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_25vm8"]
+emission_shape_scale = Vector3(0.05, 0.05, 0.05)
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector3(0, 0.1, 0)
+scale_min = 0.25
+scale_max = 0.5
+color = Color(0.532, 0.6878, 0.76, 1)
+alpha_curve = SubResource("CurveTexture_giqbi")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nik3o"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_r6ol3"]
+material = SubResource("StandardMaterial3D_nik3o")
+
+[node name="FireLight" type="OmniLight3D" unique_id=1344443775]
+light_color = Color(0.32, 0.46733338, 1, 1)
+omni_range = 5.02
+omni_attenuation = 1.44
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=862237343]
+amount = 3
+transform_align = 1
+transform_align_channel_filter = 1
+process_material = SubResource("ParticleProcessMaterial_r6ol3")
+draw_pass_1 = SubResource("QuadMesh_xn38x")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="." unique_id=802748767]
+amount = 2
+transform_align = 1
+transform_align_channel_filter = 1
+process_material = SubResource("ParticleProcessMaterial_25vm8")
+draw_pass_1 = SubResource("QuadMesh_r6ol3")

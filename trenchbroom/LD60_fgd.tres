@@ -5,10 +5,14 @@
 [ext_resource type="Resource" uid="uid://1us63yg3s3xy" path="res://Entities/MemoryStick/ent_memorystick.tres" id="2_44tpt"]
 [ext_resource type="Resource" uid="uid://c6alqxaui4e1i" path="res://Entities/Door/ent_door.tres" id="3_i6j3e"]
 [ext_resource type="Resource" uid="uid://bksal8poauhb7" path="res://Entities/Player/player.tres" id="4_t3iwa"]
+[ext_resource type="Resource" uid="uid://m1ubg0nr0553" path="res://Entities/AmbientLight/light_amb_cyan.tres" id="5_vxog0"]
+[ext_resource type="Resource" uid="uid://d0fniymafly4j" path="res://Entities/AmbientLight/light_amb_magenta.tres" id="6_dbv3x"]
+[ext_resource type="Resource" uid="uid://d2nx2jqeuidm7" path="res://Entities/AmbientLight/light_amb_yellow.tres" id="7_yvooh"]
+[ext_resource type="Resource" uid="uid://16v1sxl20tmi" path="res://Entities/AmbientLight/light_fire.tres" id="8_dbv3x"]
 
 [resource]
 script = ExtResource("1_eahcj")
 fgd_name = "LD60"
 base_fgd_files = Array[Resource]([ExtResource("1_felwi")])
-entity_definitions = Array[Resource]([ExtResource("2_44tpt"), ExtResource("3_i6j3e"), ExtResource("4_t3iwa")])
+entity_definitions = Array[Resource]([ExtResource("2_44tpt"), ExtResource("3_i6j3e"), ExtResource("4_t3iwa"), ExtResource("5_vxog0"), ExtResource("6_dbv3x"), ExtResource("7_yvooh"), ExtResource("8_dbv3x")])
 metadata/_custom_type_script = "uid://drlmgulwbjwqu"

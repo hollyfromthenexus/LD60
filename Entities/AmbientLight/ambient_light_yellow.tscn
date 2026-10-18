@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://bei4nthrw5tf1"]
+
+[ext_resource type="Texture2D" uid="uid://bq0xjdkcok2do" path="res://Entities/AmbientLight/particle-soft.png" id="1_q6wof"]
+
+[sub_resource type="Curve" id="Curve_yqa1y"]
+_data = [Vector2(0, 0), 0.0, 0.39070368, 0, 0, Vector2(0.49858356, 0.9928057), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_il0im"]
+curve = SubResource("Curve_yqa1y")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_t6ar8"]
+emission_shape_scale = Vector3(10, 10, 10)
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector3(0, 0.1, 0)
+scale_min = 0.049999997
+scale_max = 0.25
+color = Color(0.17254902, 0.17254902, 0, 1)
+alpha_curve = SubResource("CurveTexture_il0im")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cng62"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_wc8pn"]
+material = SubResource("StandardMaterial3D_cng62")
+
+[sub_resource type="Curve" id="Curve_u32nx"]
+_data = [Vector2(0, 0), 0.0, 0.39070368, 0, 0, Vector2(0.49858356, 0.9928057), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_4uidw"]
+curve = SubResource("Curve_u32nx")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wptd2"]
+emission_shape_scale = Vector3(10, 10, 10)
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector3(0, 0.1, 0)
+scale_min = 3.0
+scale_max = 8.0
+color = Color(0.11764706, 0.11764706, 0, 1)
+alpha_curve = SubResource("CurveTexture_4uidw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qv1mx"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_q6wof")
+proximity_fade_enabled = true
+proximity_fade_distance = 8.0
+distance_fade_mode = 2
+distance_fade_min_distance = 4.0
+distance_fade_max_distance = 8.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_u32nx"]
+material = SubResource("StandardMaterial3D_qv1mx")
+size = Vector2(4, 4)
+
+[node name="AmbientLightYellow" type="OmniLight3D" unique_id=287846518]
+light_color = Color(1, 1, 0, 1)
+light_energy = 2.0
+shadow_enabled = true
+omni_range = 16.0
+omni_attenuation = 1.2
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1597665875]
+amount = 16
+lifetime = 4.0
+transform_align = 1
+transform_align_channel_filter = 1
+process_material = SubResource("ParticleProcessMaterial_t6ar8")
+draw_pass_1 = SubResource("QuadMesh_wc8pn")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="." unique_id=416477387]
+amount = 4
+lifetime = 4.0
+transform_align = 1
+transform_align_channel_filter = 1
+process_material = SubResource("ParticleProcessMaterial_wptd2")
+draw_pass_1 = SubResource("QuadMesh_u32nx")

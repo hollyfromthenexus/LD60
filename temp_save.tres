@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="SaveFileData" format=3]
+
+[ext_resource type="Script" path="res://addons/DoveDraft/Services/GameSave/SaveFileMappingData.cs" id="1_qddn8"]
+[ext_resource type="Script" path="res://addons/DoveDraft/Services/Maps/MapSaveData.cs" id="2_y3olw"]
+[ext_resource type="Script" path="res://addons/DoveDraft/Services/Dialog/DialogVariableSaveData.cs" id="3_wq0v3"]
+[ext_resource type="Script" path="res://addons/DoveDraft/Services/Dialog/DialogSaveData.cs" id="4_s7afw"]
+[ext_resource type="Script" path="res://addons/DoveDraft/Services/Player/PlayerPhysicsSaveData.cs" id="5_3285s"]
+[ext_resource type="Script" path="res://addons/DoveDraft/Services/Player/PlayerSaveData.cs" id="6_wnvbw"]
+[ext_resource type="Script" path="res://addons/DoveDraft/Services/GameSave/SaveFileData.cs" id="7_gbuob"]
+
+[sub_resource type="Resource" id="Resource_qddn8"]
+script = ExtResource("2_y3olw")
+CurrentMapPath = "res://Maps/game_1.tscn"
+
+[sub_resource type="Resource" id="Resource_y3olw"]
+script = ExtResource("1_qddn8")
+TypeKey = "MapService"
+Data = SubResource("Resource_qddn8")
+
+[sub_resource type="Resource" id="Resource_wq0v3"]
+script = ExtResource("3_wq0v3")
+Floats = Dictionary[String, float]({})
+Strings = Dictionary[String, String]({})
+Bools = Dictionary[String, bool]({})
+
+[sub_resource type="Resource" id="Resource_s7afw"]
+script = ExtResource("4_s7afw")
+Variables = SubResource("Resource_wq0v3")
+
+[sub_resource type="Resource" id="Resource_3285s"]
+script = ExtResource("1_qddn8")
+TypeKey = "DialogService"
+Data = SubResource("Resource_s7afw")
+
+[sub_resource type="Resource" id="Resource_wnvbw"]
+script = ExtResource("1_qddn8")
+TypeKey = "CameraService"
+
+[sub_resource type="Resource" id="Resource_gbuob"]
+script = ExtResource("5_3285s")
+GlobalPosition = Vector3(-28.428179, -7.4991198, 36.501194)
+WalkVelocity = Vector3(0, 0, -8)
+AirVelocity = Vector3(0, -1, 0)
+
+[sub_resource type="Resource" id="Resource_4juvx"]
+script = ExtResource("6_wnvbw")
+PlayerExists = true
+Physics = SubResource("Resource_gbuob")
+
+[sub_resource type="Resource" id="Resource_hbiut"]
+script = ExtResource("1_qddn8")
+TypeKey = "PlayerService"
+Data = SubResource("Resource_4juvx")
+
+[resource]
+script = ExtResource("7_gbuob")
+AllData = Array[ExtResource("1_qddn8")]([SubResource("Resource_y3olw"), SubResource("Resource_3285s"), SubResource("Resource_wnvbw"), SubResource("Resource_hbiut")])

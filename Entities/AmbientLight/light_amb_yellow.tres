@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDPointClass" format=3 uid="uid://d2nx2jqeuidm7"]
+
+[ext_resource type="Script" uid="uid://d1nwwgcrner8b" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="1_dgokk"]
+[ext_resource type="PackedScene" uid="uid://bei4nthrw5tf1" path="res://Entities/AmbientLight/ambient_light_yellow.tscn" id="2_dgokk"]
+[ext_resource type="Script" uid="uid://cxsqwtsqd8w33" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class.gd" id="3_sg3mk"]
+
+[resource]
+script = ExtResource("3_sg3mk")
+scene_file = ExtResource("2_dgokk")
+classname = "light_amb_yellow"
+metadata/_custom_type_script = "uid://cxsqwtsqd8w33"

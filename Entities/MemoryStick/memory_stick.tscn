@@ -189,3 +189,7 @@ transform_align = 1
 transform_align_channel_filter = 1
 process_material = SubResource("ParticleProcessMaterial_f8sf5")
 draw_pass_1 = SubResource("QuadMesh_jxwex")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1946359525]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7895351, 0)
+light_color = Color(8.278489e-06, 0.90227133, 0.5090796, 1)

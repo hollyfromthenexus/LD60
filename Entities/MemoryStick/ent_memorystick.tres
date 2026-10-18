@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDModelPointClass" format=3 uid="uid://1us63yg3s3xy"]
+
+[ext_resource type="Script" uid="uid://d1nwwgcrner8b" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="1_qvryv"]
+[ext_resource type="PackedScene" uid="uid://caig8rbh5hb2" path="res://Entities/MemoryStick/memory_stick.tscn" id="2_ewrvo"]
+[ext_resource type="Script" uid="uid://ldfqjtq0br35" path="res://addons/func_godot/src/fgd/func_godot_fgd_model_point_class.gd" id="2_uhp05"]
+
+[resource]
+script = ExtResource("2_uhp05")
+target_map_editor = 1
+scene_file = ExtResource("2_ewrvo")
+classname = "ent_memorystick"
+class_properties = Dictionary[String, Variant]({
+"upgrade_capacity": 1024
+})
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.8, 0.8, 0.8, 1),
+"model": "{\"path\": \"trenchbroom/generated_models/ent_memorystick.glb\", \"scale\": 32.0 }",
+"size": AABB(-8, -8, -32, 8, 8, 8)
+})
+metadata/_custom_type_script = "uid://ldfqjtq0br35"

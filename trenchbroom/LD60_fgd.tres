@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" uid="uid://drlmgulwbjwqu" path="res://addons/func_godot/src/fgd/func_godot_fgd_file.gd" id="1_eahcj"]
 [ext_resource type="Resource" uid="uid://crgpdahjaj" path="res://addons/func_godot/fgd/func_godot_fgd.tres" id="1_felwi"]
+[ext_resource type="Resource" uid="uid://1us63yg3s3xy" path="res://Entities/MemoryStick/ent_memorystick.tres" id="2_44tpt"]
 
 [resource]
 script = ExtResource("1_eahcj")
 fgd_name = "LD60"
 base_fgd_files = Array[Resource]([ExtResource("1_felwi")])
+entity_definitions = Array[Resource]([ExtResource("2_44tpt")])
 metadata/_custom_type_script = "uid://drlmgulwbjwqu"

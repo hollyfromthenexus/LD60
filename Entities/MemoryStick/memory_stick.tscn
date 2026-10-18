@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://caig8rbh5hb2"]
 
-[ext_resource type="Script" uid="uid://beovebu8s00u1" path="res://Components/MemoryStick/MemoryStick.cs" id="1_f8sf5"]
+[ext_resource type="Script" uid="uid://beovebu8s00u1" path="res://Entities/MemoryStick/MemoryStick.cs" id="1_s7hcy"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_jxwex"]
 size = Vector3(0.076, 0.264, 0.72)
@@ -154,11 +154,21 @@ _data = {
 &"idle": SubResource("Animation_jxwex")
 }
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_f8sf5"]
+emission_shape_scale = Vector3(0.25, 0.25, 0.25)
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector3(0, 1.51, 0)
+scale_min = 0.19999999
+scale_max = 0.19999999
+
+[sub_resource type="QuadMesh" id="QuadMesh_jxwex"]
+
 [node name="MemoryStick" type="Area3D" unique_id=1320072689]
 collision_layer = 0
 collision_mask = 512
 monitorable = false
-script = ExtResource("1_f8sf5")
+script = ExtResource("1_s7hcy")
 
 [node name="Model" type="Node3D" parent="." unique_id=1892565652]
 
@@ -172,3 +182,10 @@ shape = SubResource("SphereShape3D_1igra")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=807361645]
 libraries/ = SubResource("AnimationLibrary_dv0lp")
 autoplay = &"idle"
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1468499769]
+visible = false
+transform_align = 1
+transform_align_channel_filter = 1
+process_material = SubResource("ParticleProcessMaterial_f8sf5")
+draw_pass_1 = SubResource("QuadMesh_jxwex")

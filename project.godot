@@ -48,6 +48,10 @@ project/assembly_name="LD60"
 
 enabled=PackedStringArray("res://addons/DoveDraft/plugin.cfg", "res://addons/YarnSpinner-Godot/plugin.cfg", "res://addons/func_godot/plugin.cfg")
 
+[func_godot]
+
+model_point_class_save_path="trenchbroom/generated_models"
+
 [input]
 
 player_move_forward={

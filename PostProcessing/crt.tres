@@ -1,0 +1,34 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b387v6r5q0a03"]
+
+[ext_resource type="Shader" uid="uid://b4kwy80l03ffq" path="res://addons/flowerwall_crt/shaders/crt.gdshader" id="1_d3d7e"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6kh64"]
+frequency = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_w18vu"]
+width = 128
+height = 128
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_6kh64")
+seamless = true
+
+[resource]
+shader = ExtResource("1_d3d7e")
+shader_parameter/enable_slotmask = true
+shader_parameter/enable_gridmask = false
+shader_parameter/mask_strength = 0.30000000447036
+shader_parameter/pixel_size = 6.0
+shader_parameter/enable_grain = true
+shader_parameter/colored_grain = true
+shader_parameter/grain_strength = 0.10000000149012
+shader_parameter/enable_curving = true
+shader_parameter/curve_power = 1.01999999955296
+shader_parameter/enable_scanlines = true
+shader_parameter/scanlines_interval = 3.0
+shader_parameter/scanlines_opacity = 0.10000000149012
+shader_parameter/scanlines_thickness = 2.0
+shader_parameter/enable_smearing = true
+shader_parameter/smearing_strength = 0.10000000149012
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_w18vu")
+shader_parameter/enable_wiggle = false
+shader_parameter/wiggle = 0.0

@@ -7,3 +7,4 @@
 - [Yarn Spinner Godot](https://github.com/YarnSpinnerTool/YarnSpinner-Godot/) (Dialog Scripting)
 - [GDTask](https://github.com/Delsin-Yu/GDTask.Nuget) (struct-based async/await tasks for Godot derived from Cysharp's [UniTask](https://github.com/Cysharp/UniTask)!)
 - [Flowerwall-CRT-shader-for-Godot](https://github.com/art-oria/Flowerwall-CRT-shader-for-Godot)
+- [RetroPostProcessing Dither](https://godotshaders.com/shader/retro-post-processing/)

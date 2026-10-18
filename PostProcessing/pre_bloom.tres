@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://ckj4gkr31uxhd"]
+
+[ext_resource type="Shader" uid="uid://co1lipkps8lws" path="res://addons/flowerwall_crt/shaders/bloom.gdshader" id="1_y5lc3"]
+
+[resource]
+shader = ExtResource("1_y5lc3")
+shader_parameter/bloom_threshold = 0.6999999843536
+shader_parameter/bloom_intensity = 1.3499999698248
+shader_parameter/bloom_blur_iterations = 5
+shader_parameter/bloom_blur_size = 0.00999999977648
+shader_parameter/bloom_blur_subdivisions = 8

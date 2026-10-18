@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://o0hyl3pdyc2q"]
+
+[ext_resource type="Shader" uid="uid://cttmcfopcxhf8" path="res://addons/flowerwall_crt/shaders/blur.gdshader" id="1_unoqt"]
+
+[resource]
+shader = ExtResource("1_unoqt")
+shader_parameter/step = Vector2(1, 0)
+shader_parameter/radius = 1.0

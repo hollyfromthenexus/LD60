@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://1iiwoucuk3om"]
 
 [ext_resource type="Script" uid="uid://8xycjaq4kges" path="res://addons/DoveDraft/Services/Maps/Map.cs" id="1_jl35y"]
+[ext_resource type="Environment" uid="uid://doanwvkg1tl6x" path="res://PostProcessing/game_env.tres" id="1_qeskd"]
 [ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="2_qeskd"]
 [ext_resource type="Resource" uid="uid://dot87iw3dt33r" path="res://trenchbroom/FD60_map_settings.tres" id="3_ptokj"]
 [ext_resource type="Material" uid="uid://kksuf5b2epy4" path="res://trenchbroom/textures/placeholder/grey.tres" id="4_me08f"]
@@ -15,10 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://bei4nthrw5tf1" path="res://Entities/AmbientLight/ambient_light_yellow.tscn" id="13_2n5eq"]
 [ext_resource type="PackedScene" uid="uid://ca0mvxdojgwjn" path="res://Entities/Door/door.tscn" id="13_gy4qi"]
 [ext_resource type="PackedScene" uid="uid://dogjuqndeofax" path="res://Entities/AmbientLight/fire_light.tscn" id="15_jl35y"]
-
-[sub_resource type="Environment" id="Environment_lg3yx"]
-background_mode = 1
-background_color = Color(0.0885599, 0.0885599, 0.0885599, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_jl35y"]
 _surfaces = [{
@@ -687,7 +684,7 @@ points = PackedVector3Array(-31, -15.5, -6, -31, -16, -6, -33.5, -15.5, -6, -33.
 points = PackedVector3Array(-18.5, -15.5, -6, -18.5, -16, -6, -31, -15.5, -6, -31, -16, -6, -18.5, -15.5, -8.5, -18.5, -16, -8.5, -31, -15.5, -8.5, -31, -16, -8.5)
 
 [node name="Game1" type="WorldEnvironment" unique_id=297841384]
-environment = SubResource("Environment_lg3yx")
+environment = ExtResource("1_qeskd")
 script = ExtResource("1_jl35y")
 metadata/_custom_type_script = "uid://8xycjaq4kges"
 

@@ -1,6 +1,8 @@
 using System;
 using DoveDraft;
+using Godot;
 
+[Tool]
 public partial class DoorInteractable : Interactable
 {
     public bool DoorIsInteractable { get; set; } = true;

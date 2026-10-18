@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://ca0mvxdojgwjn"]
 
-[ext_resource type="Script" uid="uid://b43to6k7u3bdv" path="res://Components/Door/Door.cs" id="1_2ap5t"]
-[ext_resource type="Material" uid="uid://ctsxcrgii61sf" path="res://trenchbroom/textures/wood-4.tres" id="2_aif1r"]
-[ext_resource type="Material" uid="uid://b5m31d7s53xi0" path="res://trenchbroom/textures/placeholder/orange.tres" id="3_hrgvj"]
-[ext_resource type="Script" uid="uid://cjtwvd8yw60hx" path="res://Components/Door/DoorInteractable.cs" id="4_aif1r"]
+[ext_resource type="Script" uid="uid://b43to6k7u3bdv" path="res://Entities/Door/Door.cs" id="1_qhasd"]
+[ext_resource type="Material" uid="uid://ctsxcrgii61sf" path="res://trenchbroom/textures/wood-4.tres" id="2_uf5hg"]
+[ext_resource type="Material" uid="uid://b5m31d7s53xi0" path="res://trenchbroom/textures/placeholder/orange.tres" id="3_o8ax8"]
+[ext_resource type="Script" uid="uid://cjtwvd8yw60hx" path="res://Entities/Door/DoorInteractable.cs" id="4_nx6qy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1a0l5"]
-size = Vector3(1.2358398, 2.4588623, 0.24932861)
+size = Vector3(1.5, 2.5, 0.249)
 
 [sub_resource type="BoxMesh" id="BoxMesh_g2m6a"]
-material = ExtResource("2_aif1r")
-size = Vector3(1.2098389, 2.4639893, 0.12414551)
+material = ExtResource("2_uf5hg")
+size = Vector3(1.5, 2.5, 0.124)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ey2kc"]
-material = ExtResource("3_hrgvj")
+material = ExtResource("3_o8ax8")
 size = Vector3(0.13061523, 0.048858643, 0.12243652)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h4c0r"]
@@ -248,20 +248,20 @@ _data = {
 }
 
 [node name="Door" type="StaticBody3D" unique_id=1073097031 node_paths=PackedStringArray("Anim", "Interactable", "Collider")]
-script = ExtResource("1_2ap5t")
+script = ExtResource("1_qhasd")
 Anim = NodePath("AnimationTree")
 Interactable = NodePath("Interactable")
 Collider = NodePath("CollisionShape3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=400418831]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11791992, 1.2294312, -0.11013794)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, -0.11)
 shape = SubResource("BoxShape3D_1a0l5")
 
 [node name="Model" type="Node3D" parent="." unique_id=1314248372]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Model" unique_id=83227901]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.60491943, 1.2319946, -0.075190425)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 1.25, -0.075)
 mesh = SubResource("BoxMesh_g2m6a")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Model" unique_id=861013405]
@@ -276,4 +276,4 @@ anim_player = NodePath("../AnimationPlayer")
 libraries/ = SubResource("AnimationLibrary_3orm6")
 
 [node name="Interactable" type="Node" parent="." unique_id=143083028]
-script = ExtResource("4_aif1r")
+script = ExtResource("4_nx6qy")

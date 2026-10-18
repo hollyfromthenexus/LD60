@@ -22,7 +22,6 @@ public partial class MemoryStick : Area3D
         if (entity_properties.TryGetValue("upgrade_capacity", out Variant value))
         {
             UpgradeCapacity = value.AsInt32();
-            Log.For<MemoryStick>($"Using {UpgradeCapacity}");
         }
     }
 

@@ -1,6 +1,7 @@
 using DoveDraft;
 using Godot;
 
+[Tool]
 public partial class Door : StaticBody3D
 {
     [Export]
@@ -40,7 +41,20 @@ public partial class Door : StaticBody3D
 
     public override void _Ready()
     {
+        if (Engine.IsEditorHint())
+        {
+            return;
+        }
+
         Interactable.OnInteractStart += OnInteractStart;
+    }
+
+    public void _func_godot_apply_properties(Godot.Collections.Dictionary entity_properties)
+    {
+        if (entity_properties.TryGetValue("memory_usage", out Variant value))
+        {
+            MemoryUsage = value.AsInt32();
+        }
     }
 
     private void OnInteractStart()

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDModelPointClass" format=3 uid="uid://upk3ay14blhk"]
+
+[ext_resource type="Script" uid="uid://d1nwwgcrner8b" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="1_uncsl"]
+[ext_resource type="PackedScene" uid="uid://daa4tct3dr8xc" path="res://Entities/NumberDecal/number_decal.tscn" id="2_67tfw"]
+[ext_resource type="Script" uid="uid://ldfqjtq0br35" path="res://addons/func_godot/src/fgd/func_godot_fgd_model_point_class.gd" id="3_yo7xp"]
+
+[resource]
+script = ExtResource("3_yo7xp")
+target_map_editor = 1
+rotation_offset = Vector3(0, 180, 0)
+scene_file = ExtResource("2_67tfw")
+classname = "ent_number_decal"
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.8, 0.8, 0.8, 1),
+"model": "{\"path\": \"trenchbroom/generated_models/ent_number_decal.glb\", \"scale\": 32.0 }",
+"size": AABB(-32, -32, -48, 32, 32, 32)
+})
+metadata/_custom_type_script = "uid://ldfqjtq0br35"

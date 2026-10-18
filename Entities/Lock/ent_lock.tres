@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDModelPointClass" format=3 uid="uid://dboddfxkx5nfo"]
+
+[ext_resource type="Script" uid="uid://d1nwwgcrner8b" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="1_2auoy"]
+[ext_resource type="PackedScene" uid="uid://drmjjce8g04fe" path="res://Entities/Lock/lock.tscn" id="2_gycjs"]
+[ext_resource type="Script" uid="uid://ldfqjtq0br35" path="res://addons/func_godot/src/fgd/func_godot_fgd_model_point_class.gd" id="3_xcaix"]
+
+[resource]
+script = ExtResource("3_xcaix")
+target_map_editor = 1
+rotation_offset = Vector3(0, 180, 0)
+scene_file = ExtResource("2_gycjs")
+classname = "ent_lock"
+class_properties = Dictionary[String, Variant]({
+"memory_usage": 32
+})
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.8, 0.8, 0.8, 1),
+"model": "{\"path\": \"trenchbroom/generated_models/ent_lock.glb\", \"scale\": 32.0 }",
+"size": AABB(-8, -8, 0, 8, 8, 64)
+})
+metadata/_custom_type_script = "uid://ldfqjtq0br35"

@@ -12,6 +12,6 @@
 script = ExtResource("5_xx1ft")
 AppStates = Array[PackedScene]([ExtResource("1_v56nd"), ExtResource("2_eyktm"), ExtResource("3_jicb5"), ExtResource("4_eyktm"), ExtResource("5_jicb5")])
 InitialAppState = "InGame"
-InitialMapPath = "Maps/game_1.tscn"
+InitialMapPath = "Maps/game_2.tscn"
 GameYarnProject = ExtResource("1_ug4nl")
 metadata/_custom_type_script = "uid://dvb54fm10xosf"

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDModelPointClass" format=3 uid="uid://bfia7n6ke0hm3"]
+
+[ext_resource type="Script" uid="uid://d1nwwgcrner8b" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="1_x80pl"]
+[ext_resource type="PackedScene" uid="uid://b60ktf3aw28r6" path="res://Entities/Key/key.tscn" id="2_skiwe"]
+[ext_resource type="Script" uid="uid://ldfqjtq0br35" path="res://addons/func_godot/src/fgd/func_godot_fgd_model_point_class.gd" id="3_480rg"]
+
+[resource]
+script = ExtResource("3_480rg")
+target_map_editor = 1
+scene_file = ExtResource("2_skiwe")
+classname = "ent_key"
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.8, 0.8, 0.8, 1),
+"model": "{\"path\": \"trenchbroom/generated_models/ent_key.glb\", \"scale\": 32.0 }",
+"size": AABB(-8, -8, -32, 8, 8, 8)
+})
+metadata/_custom_type_script = "uid://ldfqjtq0br35"

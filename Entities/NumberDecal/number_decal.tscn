@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://daa4tct3dr8xc"]
+
+[ext_resource type="Script" uid="uid://chwf1g781ofif" path="res://Entities/NumberDecal/NumberDecal.cs" id="1_2iybo"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_gycjs"]
+size = Vector2(2, 2)
+
+[node name="NumberDecal" type="Node3D" unique_id=907888916]
+script = ExtResource("1_2iybo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=126473132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
+mesh = SubResource("QuadMesh_gycjs")

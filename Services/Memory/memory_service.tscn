@@ -10,7 +10,8 @@ outline_color = Color(0, 0, 0, 1)
 [node name="MemoryService" type="CanvasLayer" unique_id=1156203867 node_paths=PackedStringArray("ProgressBar", "Label")]
 layer = 105
 script = ExtResource("1_k7n7l")
-InitialCapacity = 256
+InitialCapacity = 128
+MovementCost = 2.0
 ProgressBar = NodePath("MemoryHUD/MarginContainer/VBoxContainer/ProgressBar")
 Label = NodePath("MemoryHUD/MarginContainer/VBoxContainer/Label")
 

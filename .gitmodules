@@ -7,3 +7,6 @@
 [submodule "addons_src/func_godot_plugin"]
 	path = addons_src/func_godot_plugin
 	url = https://github.com/func-godot/func_godot_plugin.git
+[submodule "addons_src/Flowerwall-CRT-shader-for-Godot"]
+	path = addons_src/Flowerwall-CRT-shader-for-Godot
+	url = https://github.com/art-oria/Flowerwall-CRT-shader-for-Godot.git

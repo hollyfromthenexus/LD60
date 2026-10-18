@@ -18,5 +18,6 @@ echo "Setting up project..."
 echo
 
 link_addon "DoveDraft" "DoveDraft"
+link_addon "Flowerwall-CRT-shader-for-Godot/addons/flowerwall_crt" "flowerwall_crt"
 link_addon "func_godot_plugin/addons/func_godot" "func_godot"
 link_addon "YarnSpinner-Godot/addons/YarnSpinner-Godot" "YarnSpinner-Godot"

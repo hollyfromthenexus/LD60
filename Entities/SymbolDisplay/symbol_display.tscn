@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bag6peynhmo88"]
+
+[ext_resource type="Script" uid="uid://d3ducmr51acnf" path="res://Entities/SymbolDisplay/SymbolDisplay.cs" id="1_77tfw"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_gycjs"]
+size = Vector2(2, 2)
+
+[node name="SymbolDisplay" type="Node3D" unique_id=907888916]
+script = ExtResource("1_77tfw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=126473132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
+mesh = SubResource("QuadMesh_gycjs")

@@ -15,10 +15,13 @@
 [ext_resource type="Resource" uid="uid://bv510y5nrbwp5" path="res://Entities/Keypad/ent_keypad.tres" id="12_jiahj"]
 [ext_resource type="Resource" uid="uid://cui7iyxavdptj" path="res://Entities/Tape/ent_tape.tres" id="13_tntox"]
 [ext_resource type="Resource" uid="uid://cc61k6akc2e13" path="res://Entities/TapeDeck/ent_tapedeck.tres" id="14_ylbh3"]
+[ext_resource type="Resource" uid="uid://btt3tn1fjotba" path="res://Entities/SymbolDisplay/ent_symbol_display.tres" id="15_ylbh3"]
+[ext_resource type="Resource" uid="uid://dyd3qudjdldno" path="res://Entities/SymbolEntry/ent_symbol_entry.tres" id="16_yiyov"]
+[ext_resource type="Resource" uid="uid://c7phicexy45fl" path="res://Entities/DoorFinal/ent_door_final.tres" id="17_tspat"]
 
 [resource]
 script = ExtResource("1_eahcj")
 fgd_name = "LD60"
 base_fgd_files = Array[Resource]([ExtResource("1_felwi")])
-entity_definitions = Array[Resource]([ExtResource("2_44tpt"), ExtResource("3_i6j3e"), ExtResource("4_t3iwa"), ExtResource("5_vxog0"), ExtResource("6_dbv3x"), ExtResource("7_yvooh"), ExtResource("8_dbv3x"), ExtResource("9_yvooh"), ExtResource("10_dl55q"), ExtResource("11_h0285"), ExtResource("12_jiahj"), ExtResource("13_tntox"), ExtResource("14_ylbh3")])
+entity_definitions = Array[Resource]([ExtResource("2_44tpt"), ExtResource("3_i6j3e"), ExtResource("4_t3iwa"), ExtResource("5_vxog0"), ExtResource("6_dbv3x"), ExtResource("7_yvooh"), ExtResource("8_dbv3x"), ExtResource("9_yvooh"), ExtResource("10_dl55q"), ExtResource("11_h0285"), ExtResource("12_jiahj"), ExtResource("13_tntox"), ExtResource("14_ylbh3"), ExtResource("15_ylbh3"), ExtResource("16_yiyov"), ExtResource("17_tspat")])
 metadata/_custom_type_script = "uid://drlmgulwbjwqu"

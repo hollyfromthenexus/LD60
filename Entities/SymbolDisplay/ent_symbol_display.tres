@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDModelPointClass" format=3 uid="uid://btt3tn1fjotba"]
+
+[ext_resource type="Script" uid="uid://d1nwwgcrner8b" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="1_3kof3"]
+[ext_resource type="PackedScene" uid="uid://bag6peynhmo88" path="res://Entities/SymbolDisplay/symbol_display.tscn" id="2_78vaa"]
+[ext_resource type="Script" uid="uid://ldfqjtq0br35" path="res://addons/func_godot/src/fgd/func_godot_fgd_model_point_class.gd" id="3_e7njf"]
+
+[resource]
+script = ExtResource("3_e7njf")
+target_map_editor = 1
+rotation_offset = Vector3(0, 180, 0)
+scene_file = ExtResource("2_78vaa")
+classname = "ent_symbol_display"
+class_properties = Dictionary[String, Variant]({
+"symbol": "star"
+})
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.8, 0.8, 0.8, 1),
+"model": "{\"path\": \"trenchbroom/generated_models/ent_symbol_display.glb\", \"scale\": 32.0 }",
+"size": AABB(-32, -32, -32, 32, 32, 32)
+})
+metadata/_custom_type_script = "uid://ldfqjtq0br35"

@@ -12,6 +12,8 @@ layer = 105
 script = ExtResource("1_k7n7l")
 InitialCapacity = 256
 MovementCost = 2.0
+LookCost = 0.2
+TimeCost = 0.01
 ProgressBar = NodePath("MemoryHUD/MarginContainer/VBoxContainer/ProgressBar")
 Label = NodePath("MemoryHUD/MarginContainer/VBoxContainer/Label")
 

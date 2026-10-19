@@ -586,7 +586,7 @@
 // entity 14
 {
 "classname" "ent_memorystick"
-"origin" "-424 -488 144"
+"origin" "-184 -392 144"
 "upgrade_capacity" "256"
 "_tb_layer" "3"
 }

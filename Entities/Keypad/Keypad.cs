@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using DoveDraft;
 using Godot;
 using GodotTask;
 
@@ -28,6 +30,7 @@ public partial class Keypad : StaticBody3D
     [Export]
     private StandardMaterial3D CookieMaterial { get; set; }
 
+    private CancellationTokenSource cancelSource;
     private StringBuilder currentSequence = new();
 
     public override void _EnterTree()
@@ -38,6 +41,7 @@ public partial class Keypad : StaticBody3D
         }
 
         AddToGroup(nameof(Keypad));
+        cancelSource = new();
     }
 
     public override void _ExitTree()
@@ -48,6 +52,9 @@ public partial class Keypad : StaticBody3D
         }
 
         RemoveFromGroup(nameof(Keypad));
+
+        cancelSource.Cancel();
+        cancelSource = null;
     }
 
     public override void _Ready()
@@ -93,10 +100,11 @@ public partial class Keypad : StaticBody3D
     private void OnDigitPressed(string digit)
     {
         currentSequence.Append(digit);
-        PressDigit().Forget();
+        Services.Memory.EatMemory(MemoryUsage);
+        PressDigit(cancelSource.Token).Forget();
     }
 
-    private async GDTaskVoid PressDigit()
+    private async GDTaskVoid PressDigit(CancellationToken token)
     {
         string result = currentSequence.ToString();
 
@@ -104,11 +112,11 @@ public partial class Keypad : StaticBody3D
         {
             if (result == Combination)
             {
-                await CorrectCombination();
+                await CorrectCombination(token);
             }
             else
             {
-                await IncorrectCombination();
+                await IncorrectCombination(token);
             }
 
             currentSequence.Clear();
@@ -118,47 +126,47 @@ public partial class Keypad : StaticBody3D
             SetButtonsEnabled(false);
 
             SetLightColor(Colors.Black);
-            await GDTask.Delay(100);
+            await GDTask.Delay(100, token);
             SetLightColor(Colors.Blue);
 
             SetButtonsEnabled(true);
         }
     }
 
-    private async GDTask CorrectCombination()
+    private async GDTask CorrectCombination(CancellationToken token)
     {
         SetButtonsEnabled(false);
 
         for (int i = 0; i < 4; i++)
         {
             SetLightColor(Colors.Green * 0.5f);
-            await GDTask.Delay(100);
+            await GDTask.Delay(100, token);
 
             SetLightColor(Colors.Green);
-            await GDTask.Delay(200);
+            await GDTask.Delay(200, token);
         }
 
         SetLightColor(Colors.Green);
         SetTargetDoorsLocked(false);
     }
 
-    private async GDTask IncorrectCombination()
+    private async GDTask IncorrectCombination(CancellationToken token)
     {
         SetButtonsEnabled(false);
 
         for (int i = 0; i < 1; i++)
         {
             SetLightColor(Colors.Black);
-            await GDTask.Delay(100);
+            await GDTask.Delay(100, token);
 
             SetLightColor(Colors.Red);
-            await GDTask.Delay(200);
+            await GDTask.Delay(200, token);
         }
 
-        await GDTask.Delay(1000);
+        await GDTask.Delay(1000, token);
 
         SetLightColor(Colors.Black);
-        await GDTask.Delay(100);
+        await GDTask.Delay(100, token);
 
         SetLightColor(Colors.Blue);
         SetButtonsEnabled(true);

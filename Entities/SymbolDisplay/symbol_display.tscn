@@ -8,9 +8,6 @@ roughness = 0.2
 emission_enabled = true
 emission = Color(1, 0, 1, 1)
 
-[sub_resource type="QuadMesh" id="QuadMesh_gycjs"]
-size = Vector2(2, 2)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_li6ux"]
 resource_name = "FrameA"
 cull_mode = 2
@@ -271,11 +268,6 @@ SymbolDisplays = {
 "timelines": NodePath("SymbolDisplayFrame/SymbolTimelines"),
 "x": NodePath("SymbolDisplayFrame/SymbolX")
 }
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=126473132]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
-visible = false
-mesh = SubResource("QuadMesh_gycjs")
 
 [node name="SymbolDisplayFrame" type="MeshInstance3D" parent="." unique_id=1328504783]
 transform = Transform3D(-2.8781034e-08, 0, -1, 0, 1, 0, 0.6584333, 0, -4.371139e-08, 0, 0, 0.15080115)

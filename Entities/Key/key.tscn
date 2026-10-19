@@ -1,15 +1,7 @@
 [gd_scene format=3 uid="uid://b60ktf3aw28r6"]
 
 [ext_resource type="Script" uid="uid://c0t608f1klodh" path="res://Entities/Key/KeyPickup.cs" id="1_o7nli"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_jxwex"]
-size = Vector3(0.076, 0.10253906, 0.5767969)
-
-[sub_resource type="BoxMesh" id="BoxMesh_s1m8w"]
-size = Vector3(0.03125, 0.17993164, 0.08886719)
-
-[sub_resource type="BoxMesh" id="BoxMesh_ihed3"]
-size = Vector3(0.10449219, 0.25097656, 0.24905762)
+[ext_resource type="PackedScene" uid="uid://cf1jr34p8tpq1" path="res://Entities/Key/Models/Key.glb" id="2_p1j8s"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1igra"]
 radius = 0.3984114
@@ -168,25 +160,8 @@ script = ExtResource("1_o7nli")
 
 [node name="Model" type="Node3D" parent="." unique_id=1892565652]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Model" unique_id=554022993]
-transform = Transform3D(1, 0, 0, 0, 0.7317713, 0.68155026, 0, -0.68155026, 0.7317713, 0, -0.04880007, -0.052395973)
-mesh = SubResource("BoxMesh_jxwex")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Model" unique_id=2133886709]
-transform = Transform3D(1, 0, 0, 0, 0.7317713, 0.68155026, 0, -0.68155026, 0.7317713, 0, -0.12144309, -0.2928506)
-mesh = SubResource("BoxMesh_s1m8w")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="Model" unique_id=1659225614]
-transform = Transform3D(1, 0, 0, 0, 0.7317713, 0.68155026, 0, -0.68155026, 0.7317713, 0, -0.020321652, -0.19020024)
-mesh = SubResource("BoxMesh_s1m8w")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="Model" unique_id=724141470]
-transform = Transform3D(1, 0, 0, 0, 0.7317713, 0.68155026, 0, -0.68155026, 0.7317713, 0, -0.12109387, -0.20017561)
-mesh = SubResource("BoxMesh_s1m8w")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Model" unique_id=665689333]
-transform = Transform3D(1, 0, 0, 0, 0.7317713, 0.68155026, 0, -0.68155026, 0.7317713, 0, 0.20149088, 0.18071389)
-mesh = SubResource("BoxMesh_ihed3")
+[node name="Key2" parent="Model" unique_id=1333931225 instance=ExtResource("2_p1j8s")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.17604366, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=149744150]
 shape = SubResource("SphereShape3D_1igra")
@@ -196,5 +171,6 @@ libraries/ = SubResource("AnimationLibrary_dv0lp")
 autoplay = &"idle"
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1946359525]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7895351, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.451828, 0)
 light_color = Color(0.82500005, 0.9, 0, 1)
+light_energy = 0.71

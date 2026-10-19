@@ -11,8 +11,7 @@ rotation_offset = Vector3(0, 180, 0)
 scene_file = ExtResource("2_ajh03")
 classname = "ent_door"
 class_properties = Dictionary[String, Variant]({
-"memory_usage": 256,
-"open_on_unlock": false
+"memory_usage": 256
 })
 meta_properties = Dictionary[String, Variant]({
 "color": Color(0.8, 0.8, 0.8, 1),

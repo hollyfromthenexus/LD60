@@ -770,6 +770,7 @@
 "origin" "-1176 -792 112"
 "angle" "180"
 "targetname" "door4"
+"open_on_unlock" "0"
 "_tb_layer" "4"
 }
 // entity 23

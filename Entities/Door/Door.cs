@@ -102,6 +102,8 @@ public partial class Door : StaticBody3D
     private void RefreshLockStatus()
     {
         Interactable.DoorIsInteractable = lockIds.Count == 0;
+
+        ADD OPEN ON UNLOCK SETTING
     }
 
     private void OnInteractStart()

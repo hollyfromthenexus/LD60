@@ -1,0 +1,185 @@
+using System.Collections.Generic;
+using System.Text;
+using System.Threading.Tasks;
+using Godot;
+using GodotTask;
+
+[Tool]
+public partial class Keypad : StaticBody3D
+{
+    [Export]
+    private string Target { get; set; }
+
+    [Export]
+    private int MemoryUsage { get; set; }
+
+    [Export]
+    private string Combination { get; set; } = "1337";
+
+    [Export]
+    private KeypadButton[] Buttons { get; set; }
+
+    [Export]
+    private OmniLight3D Light { get; set; }
+
+    [Export]
+    private StandardMaterial3D CookieMaterial { get; set; }
+
+    private StringBuilder currentSequence = new();
+
+    public override void _Ready()
+    {
+        if (Engine.IsEditorHint())
+        {
+            return;
+        }
+
+        foreach (KeypadButton button in Buttons)
+        {
+            button.OnPressed += OnDigitPressed;
+        }
+
+        SetTargetDoorsLocked(true);
+        SetButtonsEnabled(true);
+        SetLightColor(Colors.Blue);
+    }
+
+    public void _func_godot_apply_properties(Godot.Collections.Dictionary entity_properties)
+    {
+        if (entity_properties.TryGetValue("memory_usage", out Variant memoryUsage))
+        {
+            MemoryUsage = memoryUsage.AsInt32();
+        }
+
+        if (entity_properties.TryGetValue("target", out Variant target))
+        {
+            Target = target.AsString();
+        }
+
+        if (entity_properties.TryGetValue("combination", out Variant combination))
+        {
+            Combination = combination.AsString();
+        }
+    }
+
+    private void OnDigitPressed(string digit)
+    {
+        currentSequence.Append(digit);
+        PressDigit().Forget();
+    }
+
+    private async GDTaskVoid PressDigit()
+    {
+        string result = currentSequence.ToString();
+
+        if (result.Length >= Combination.Length)
+        {
+            if (result == Combination)
+            {
+                await CorrectCombination();
+            }
+            else
+            {
+                await IncorrectCombination();
+            }
+
+            currentSequence.Clear();
+        }
+        else
+        {
+            SetButtonsEnabled(false);
+
+            SetLightColor(Colors.Black);
+            await GDTask.Delay(100);
+            SetLightColor(Colors.Blue);
+
+            SetButtonsEnabled(true);
+        }
+    }
+
+    private async GDTask CorrectCombination()
+    {
+        SetButtonsEnabled(false);
+
+        for (int i = 0; i < 4; i++)
+        {
+            SetLightColor(Colors.Green * 0.5f);
+            await GDTask.Delay(100);
+
+            SetLightColor(Colors.Green);
+            await GDTask.Delay(200);
+        }
+
+        SetLightColor(Colors.Green);
+        SetTargetDoorsLocked(false);
+    }
+
+    private async GDTask IncorrectCombination()
+    {
+        SetButtonsEnabled(false);
+
+        for (int i = 0; i < 1; i++)
+        {
+            SetLightColor(Colors.Black);
+            await GDTask.Delay(100);
+
+            SetLightColor(Colors.Red);
+            await GDTask.Delay(200);
+        }
+
+        await GDTask.Delay(1000);
+
+        SetLightColor(Colors.Black);
+        await GDTask.Delay(100);
+
+        SetLightColor(Colors.Blue);
+        SetButtonsEnabled(true);
+    }
+
+    private void SetButtonsEnabled(bool isEnabled)
+    {
+        foreach (KeypadButton button in Buttons)
+        {
+            button.SetEnabled(isEnabled);
+        }
+    }
+
+    private void SetTargetDoorsLocked(bool isLocked)
+    {
+        ulong instanceId = GetInstanceId();
+
+        foreach (Door targetDoor in FindTargetDoors())
+        {
+            if (isLocked)
+            {
+                targetDoor.Lock(instanceId);
+            }
+            else
+            {
+                targetDoor.Unlock(instanceId);
+            }
+        }
+    }
+
+    private IEnumerable<Door> FindTargetDoors()
+    {
+        if (string.IsNullOrEmpty(Target))
+        {
+            yield break;
+        }
+
+        foreach (Node node in GetTree().GetNodesInGroup(nameof(Door)))
+        {
+            if (node is Door door && door.TargetName == Target)
+            {
+                yield return door;
+            }
+        }
+    }
+
+    private void SetLightColor(Color color)
+    {
+        Light.LightColor = color;
+        CookieMaterial.AlbedoColor = color;
+    }
+}

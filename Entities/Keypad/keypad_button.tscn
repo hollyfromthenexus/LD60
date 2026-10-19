@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://hnmjorhvgqn"]
+
+[ext_resource type="Material" uid="uid://m2v4muthuqa4" path="res://trenchbroom/textures/placeholder/blue.tres" id="1_pi2ty"]
+[ext_resource type="Script" uid="uid://boay2qsjmmy0c" path="res://Entities/Keypad/KeypadButton.cs" id="1_xqi4f"]
+[ext_resource type="Script" uid="uid://cct7ovv8343yj" path="res://Entities/Keypad/KeypadInteractable.cs" id="3_5q1io"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_has40"]
+material = ExtResource("1_pi2ty")
+size = Vector3(0.9, 0.9, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xqi4f"]
+size = Vector3(0.9, 0.9, 0.1)
+
+[node name="KeypadButton" type="StaticBody3D" unique_id=403748585 node_paths=PackedStringArray("Label", "Interactable")]
+script = ExtResource("1_xqi4f")
+Label = NodePath("Label3D")
+Interactable = NodePath("Interactable")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=615118802]
+mesh = SubResource("BoxMesh_has40")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=97669691]
+shape = SubResource("BoxShape3D_xqi4f")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1028491601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05624208)
+text = "1"
+font_size = 162
+outline_size = 53
+
+[node name="Interactable" type="Node" parent="." unique_id=1749261936]
+script = ExtResource("3_5q1io")

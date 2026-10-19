@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bohkci0fyyc2n"]
+
+[ext_resource type="Script" uid="uid://ctalxkdldm6il" path="res://Services/Inventory/InventoryService.cs" id="1_kgmdo"]
+[ext_resource type="PackedScene" uid="uid://cnw6conubjq5" path="res://Services/Inventory/inventory_icon.tscn" id="2_haaaw"]
+[ext_resource type="Texture2D" uid="uid://bhc4sfsfx5yit" path="res://Entities/Key/icon_texture.tres" id="3_diwot"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1f758"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+draw_center = false
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="InventoryService" type="CanvasLayer" unique_id=2091751444 node_paths=PackedStringArray("IconParent")]
+layer = -3
+script = ExtResource("1_kgmdo")
+IconScene = ExtResource("2_haaaw")
+ItemTextures = Dictionary[String, Texture2D]({
+"KeyPickup": ExtResource("3_diwot")
+})
+IconParent = NodePath("Control/PanelContainer/HBoxContainer")
+
+[node name="Control" type="MarginContainer" parent="." unique_id=949322317]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=44604163]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_1f758")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer" unique_id=869447382]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8

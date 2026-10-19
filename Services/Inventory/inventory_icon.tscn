@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cnw6conubjq5"]
+
+[ext_resource type="Script" uid="uid://d4ng2uqdnpocv" path="res://Services/Inventory/InventoryIcon.cs" id="1_316s4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_diwot"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.15, 0.15, 0.15, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 1, 1)
+anti_aliasing = false
+
+[node name="InventoryIcon" type="PanelContainer" unique_id=140389701 node_paths=PackedStringArray("Display")]
+theme_override_styles/panel = SubResource("StyleBoxFlat_diwot")
+script = ExtResource("1_316s4")
+Display = NodePath("TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=440409870]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2

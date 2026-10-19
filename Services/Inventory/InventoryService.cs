@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using DoveDraft;
 using Godot;
 using static IInventoryService;
@@ -20,11 +21,26 @@ public interface IInventoryService : IService
 
 public partial class InventoryService : CanvasLayer, IInventoryService
 {
+    private class ItemData
+    {
+        public string Item { get; set; }
+        public InventoryIcon Icon { get; set; }
+    }
+
     public event ContentsChangedDelegate OnContentsChanged;
 
-    public IEnumerable<string> AllItems => items;
+    public IEnumerable<string> AllItems => items.Select(data => data.Item);
 
-    private List<string> items = new();
+    [Export]
+    private PackedScene IconScene { get; set; }
+
+    [Export]
+    private Godot.Collections.Dictionary<string, Texture2D> ItemTextures { get; set; } = new();
+
+    [Export]
+    private Control IconParent { get; set; }
+
+    private List<ItemData> items = new();
 
     //
     //  Godot Methods
@@ -47,6 +63,10 @@ public partial class InventoryService : CanvasLayer, IInventoryService
     public void Clear()
     {
         int count = items.Count;
+        foreach (ItemData data in items)
+        {
+            DestroyItemData(data);
+        }
         items.Clear();
 
         if (count > 0)
@@ -58,7 +78,7 @@ public partial class InventoryService : CanvasLayer, IInventoryService
     public void AddItem(string itemType)
     {
         Log.For<InventoryService>($"Adding {itemType}.");
-        items.Add(itemType);
+        items.Add(CreateItemData(itemType));
 
         OnContentsChanged?.Invoke();
     }
@@ -66,14 +86,39 @@ public partial class InventoryService : CanvasLayer, IInventoryService
     public bool RemoveItem(string itemType)
     {
         Log.For<InventoryService>($"Removing {itemType}.");
-        bool result = items.Remove(itemType);
 
-        if (result)
+        int dataIndex = items.FindIndex(itemData => itemData.Item == itemType);
+        if (dataIndex == -1)
         {
-            OnContentsChanged?.Invoke();
+            return false;
         }
 
-        return result;
+        ItemData data = items[dataIndex];
+        DestroyItemData(data);
+
+        items.RemoveAt(dataIndex);
+        OnContentsChanged?.Invoke();
+        return true;
+    }
+
+    private ItemData CreateItemData(string itemType)
+    {
+        InventoryIcon icon = null;
+        if (ItemTextures.TryGetValue(itemType, out Texture2D texture))
+        {
+            icon = IconScene.Instantiate<InventoryIcon>();
+            IconParent.AddChild(icon);
+
+            icon.Initialize(texture);
+        }
+
+        return new() { Item = itemType, Icon = icon };
+    }
+
+    private void DestroyItemData(ItemData data)
+    {
+        data.Icon.QueueFree();
+        data.Icon = null;
     }
 }
 

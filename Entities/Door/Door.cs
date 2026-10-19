@@ -103,7 +103,7 @@ public partial class Door : StaticBody3D
     {
         Interactable.DoorIsInteractable = lockIds.Count == 0;
 
-        ADD OPEN ON UNLOCK SETTING
+        // ADD OPEN ON UNLOCK SETTING
     }
 
     private void OnInteractStart()

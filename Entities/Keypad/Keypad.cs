@@ -11,10 +11,13 @@ public partial class Keypad : StaticBody3D
     private string Target { get; set; }
 
     [Export]
+    public string TargetName { get; set; }
+
+    [Export]
     private int MemoryUsage { get; set; }
 
     [Export]
-    private string Combination { get; set; } = "1337";
+    public string Combination { get; set; } = "1337";
 
     [Export]
     private KeypadButton[] Buttons { get; set; }
@@ -26,6 +29,26 @@ public partial class Keypad : StaticBody3D
     private StandardMaterial3D CookieMaterial { get; set; }
 
     private StringBuilder currentSequence = new();
+
+    public override void _EnterTree()
+    {
+        if (Engine.IsEditorHint())
+        {
+            return;
+        }
+
+        AddToGroup(nameof(Keypad));
+    }
+
+    public override void _ExitTree()
+    {
+        if (Engine.IsEditorHint())
+        {
+            return;
+        }
+
+        RemoveFromGroup(nameof(Keypad));
+    }
 
     public override void _Ready()
     {
@@ -54,6 +77,11 @@ public partial class Keypad : StaticBody3D
         if (entity_properties.TryGetValue("target", out Variant target))
         {
             Target = target.AsString();
+        }
+
+        if (entity_properties.TryGetValue("targetname", out Variant targetname))
+        {
+            TargetName = targetname.AsString();
         }
 
         if (entity_properties.TryGetValue("combination", out Variant combination))

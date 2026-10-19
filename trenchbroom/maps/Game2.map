@@ -1086,6 +1086,7 @@
 "origin" "-1224 -456 -400"
 "angle" "90"
 "target" "door6"
+"targetname" "tape_keypad"
 "_tb_layer" "5"
 }
 // entity 33
@@ -1099,6 +1100,7 @@
 "classname" "ent_tapedeck"
 "origin" "-1624 -1080 -256"
 "angle" "90"
+"target" "tape_keypad"
 "_tb_layer" "5"
 }
 // entity 35

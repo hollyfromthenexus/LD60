@@ -63,7 +63,7 @@ size = Vector2(4, 4)
 
 [node name="AmbientLightYellow" type="OmniLight3D" unique_id=287846518]
 light_color = Color(1, 1, 0, 1)
-light_energy = 2.0
+light_energy = 1.5
 shadow_enabled = true
 omni_range = 16.0
 omni_attenuation = 1.2

@@ -105,11 +105,13 @@ public partial class MemoryService : CanvasLayer, IMemoryService
 
     public void AddMemory(int memory)
     {
+        Log.For<MemoryService>($"Adding {memory} B capacity.");
         Capacity += memory;
     }
 
     public void EatMemory(float memory)
     {
+        Log.For<MemoryService>($"Eating {memory} B.");
         Current += memory;
     }
 

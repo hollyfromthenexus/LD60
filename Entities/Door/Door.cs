@@ -1,9 +1,13 @@
+using System.Collections.Generic;
 using DoveDraft;
 using Godot;
 
 [Tool]
 public partial class Door : StaticBody3D
 {
+    [Export]
+    public string TargetName { get; private set; }
+
     [Export]
     private float MemoryUsage { get; set; } = 256;
 
@@ -38,6 +42,27 @@ public partial class Door : StaticBody3D
     }
 
     private bool isOpenInternal;
+    private HashSet<ulong> lockIds = new();
+
+    public override void _EnterTree()
+    {
+        if (Engine.IsEditorHint())
+        {
+            return;
+        }
+
+        AddToGroup(nameof(Door));
+    }
+
+    public override void _ExitTree()
+    {
+        if (Engine.IsEditorHint())
+        {
+            return;
+        }
+
+        RemoveFromGroup(nameof(Door));
+    }
 
     public override void _Ready()
     {
@@ -51,10 +76,32 @@ public partial class Door : StaticBody3D
 
     public void _func_godot_apply_properties(Godot.Collections.Dictionary entity_properties)
     {
-        if (entity_properties.TryGetValue("memory_usage", out Variant value))
+        if (entity_properties.TryGetValue("memory_usage", out Variant memoryUsage))
         {
-            MemoryUsage = value.AsInt32();
+            MemoryUsage = memoryUsage.AsInt32();
         }
+
+        if (entity_properties.TryGetValue("targetname", out Variant targetName))
+        {
+            TargetName = targetName.AsString();
+        }
+    }
+
+    public void Lock(ulong id)
+    {
+        lockIds.Add(id);
+        RefreshLockStatus();
+    }
+
+    public void Unlock(ulong id)
+    {
+        lockIds.Remove(id);
+        RefreshLockStatus();
+    }
+
+    private void RefreshLockStatus()
+    {
+        Interactable.DoorIsInteractable = lockIds.Count == 0;
     }
 
     private void OnInteractStart()

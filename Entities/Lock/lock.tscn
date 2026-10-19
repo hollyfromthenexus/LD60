@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://drmjjce8g04fe"]
 
-[ext_resource type="Script" uid="uid://beovebu8s00u1" path="res://Entities/MemoryStick/MemoryStick.cs" id="1_miqh2"]
+[ext_resource type="Script" uid="uid://goul542nf2ba" path="res://Entities/Lock/Lock.cs" id="1_nesvu"]
 [ext_resource type="Material" uid="uid://1icpj2whpdx7" path="res://trenchbroom/textures/placeholder/black.tres" id="2_2j5xv"]
 [ext_resource type="Material" uid="uid://ce4ckp1dbx0ab" path="res://trenchbroom/textures/placeholder/white.tres" id="3_nesvu"]
+[ext_resource type="Script" uid="uid://bhmrh0f7tbkyl" path="res://Entities/Lock/LockInteractable.cs" id="4_wveym"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_l5b1h"]
 material = ExtResource("2_2j5xv")
@@ -16,14 +17,22 @@ size = Vector3(0.123046875, 0.24121094, 0.055664063)
 material = ExtResource("2_2j5xv")
 size = Vector3(0.083984375, 0.18457031, 0.02734375)
 
+[sub_resource type="BoxMesh" id="BoxMesh_jxwex"]
+size = Vector3(0.076, 0.10253906, 0.5767969)
+
+[sub_resource type="BoxMesh" id="BoxMesh_s1m8w"]
+size = Vector3(0.03125, 0.17993164, 0.08886719)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ihed3"]
+size = Vector3(0.10449219, 0.25097656, 0.24905762)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_ree2b"]
 size = Vector3(0.5, 0.5, 0.25)
 
-[node name="Lock" type="Area3D" unique_id=1320072689]
-collision_layer = 0
-collision_mask = 512
-monitorable = false
-script = ExtResource("1_miqh2")
+[node name="Lock" type="StaticBody3D" unique_id=1362472146 node_paths=PackedStringArray("Interactable", "KeyModel")]
+script = ExtResource("1_nesvu")
+Interactable = NodePath("Interactable")
+KeyModel = NodePath("Model/KeyModel")
 
 [node name="Model" type="Node3D" parent="." unique_id=1892565652]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.125, 0)
@@ -40,9 +49,35 @@ mesh = SubResource("BoxMesh_mjflw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02321066)
 mesh = SubResource("BoxMesh_has40")
 
+[node name="KeyModel" type="Node3D" parent="Model" unique_id=1739779400]
+transform = Transform3D(1, 0, 0, 0, 0.7748482, -0.6321474, 0, 0.6321474, 0.7748482, 0, 0, 0.07351819)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Model/KeyModel" unique_id=1520605867]
+transform = Transform3D(1, 0, 0, 0, 0.7317713, 0.68155026, 0, -0.68155026, 0.7317713, 0, -0.04880007, -0.052395973)
+mesh = SubResource("BoxMesh_jxwex")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Model/KeyModel" unique_id=2133886709]
+transform = Transform3D(1, 0, 0, 0, 0.7317713, 0.68155026, 0, -0.68155026, 0.7317713, 0, -0.12144309, -0.2928506)
+mesh = SubResource("BoxMesh_s1m8w")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Model/KeyModel" unique_id=1659225614]
+transform = Transform3D(1, 0, 0, 0, 0.7317713, 0.68155026, 0, -0.68155026, 0.7317713, 0, -0.020321652, -0.19020024)
+mesh = SubResource("BoxMesh_s1m8w")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Model/KeyModel" unique_id=724141470]
+transform = Transform3D(1, 0, 0, 0, 0.7317713, 0.68155026, 0, -0.68155026, 0.7317713, 0, -0.12109387, -0.20017561)
+mesh = SubResource("BoxMesh_s1m8w")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Model/KeyModel" unique_id=665689333]
+transform = Transform3D(1, 0, 0, 0, 0.7317713, 0.68155026, 0, -0.68155026, 0.7317713, 0, 0.20149088, 0.18071389)
+mesh = SubResource("BoxMesh_ihed3")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=149744150]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.125, -0.125)
 shape = SubResource("BoxShape3D_ree2b")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1946359525]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.5306108)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4225662, 0.5306108)
+
+[node name="Interactable" type="Node" parent="." unique_id=649946354]
+script = ExtResource("4_wveym")

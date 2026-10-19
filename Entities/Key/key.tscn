@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b60ktf3aw28r6"]
 
-[ext_resource type="Script" uid="uid://beovebu8s00u1" path="res://Entities/MemoryStick/MemoryStick.cs" id="1_sx8bj"]
+[ext_resource type="Script" uid="uid://c0t608f1klodh" path="res://Entities/Key/KeyPickup.cs" id="1_o7nli"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_jxwex"]
 size = Vector3(0.076, 0.10253906, 0.5767969)
@@ -164,7 +164,7 @@ _data = {
 collision_layer = 0
 collision_mask = 512
 monitorable = false
-script = ExtResource("1_sx8bj")
+script = ExtResource("1_o7nli")
 
 [node name="Model" type="Node3D" parent="." unique_id=1892565652]
 

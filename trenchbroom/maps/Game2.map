@@ -304,39 +304,33 @@
 }
 // entity 2
 {
-"classname" "player"
-"origin" "752 -464 -224"
-"angle" "-30"
-}
-// entity 3
-{
 "classname" "light_amb_magenta"
 "origin" "88 -472 168"
 }
-// entity 4
+// entity 3
 {
 "classname" "light_amb_cyan"
 "origin" "344 120 88"
 }
-// entity 5
+// entity 4
 {
 "classname" "light_fire"
 "origin" "40 -40 -184"
 }
-// entity 6
+// entity 5
 {
 "classname" "ent_symbol_display"
 "origin" "-64 -64 160"
 "angle" "180"
 "symbol" "star"
 }
-// entity 7
+// entity 6
 {
 "classname" "func_group"
 "_tb_type" "_tb_layer"
 "_tb_name" "Roofs"
 "_tb_id" "1"
-"_tb_layer_sort_index" "0"
+"_tb_layer_sort_index" "2"
 // brush 0
 {
 ( -64 -240 384 ) ( -64 -239 384 ) ( -64 -240 385 ) placeholder/grey [ 0 -1 0 16 ] [ 0 0 -1 16 ] 180 1 1
@@ -347,13 +341,13 @@
 ( 1552 -112 416 ) ( 1552 -112 417 ) ( 1552 -111 416 ) placeholder/grey [ 0 1 0 -16 ] [ 0 0 -1 16 ] 90 1 1
 }
 }
-// entity 8
+// entity 7
 {
 "classname" "func_group"
 "_tb_type" "_tb_layer"
 "_tb_name" "Room2"
 "_tb_id" "2"
-"_tb_layer_sort_index" "1"
+"_tb_layer_sort_index" "3"
 // brush 0
 {
 ( -432 -32 96 ) ( -432 -31 96 ) ( -432 -32 97 ) placeholder/grey [ 0 -1 0 0 ] [ 0 0 -1 16 ] 180 1 1
@@ -409,19 +403,19 @@
 ( -544 -416 112 ) ( -544 -416 113 ) ( -544 -415 112 ) placeholder/grey [ 0 1 0 0 ] [ 0 0 -1 0 ] 90 1 1
 }
 }
-// entity 9
+// entity 8
 {
 "classname" "ent_memorystick"
 "origin" "-344 8 144"
 "_tb_layer" "2"
 }
-// entity 10
+// entity 9
 {
 "classname" "ent_key"
 "origin" "-280 232 144"
 "_tb_layer" "2"
 }
-// entity 11
+// entity 10
 {
 "classname" "ent_door"
 "origin" "-568 -440 112"
@@ -429,7 +423,7 @@
 "targetname" "door2"
 "_tb_layer" "2"
 }
-// entity 12
+// entity 11
 {
 "classname" "ent_lock"
 "origin" "-616 -408 112"
@@ -437,7 +431,7 @@
 "target" "door2"
 "_tb_layer" "2"
 }
-// entity 13
+// entity 12
 {
 "classname" "ent_symbol_display"
 "origin" "-624 -416 192"
@@ -445,13 +439,13 @@
 "symbol" "circle"
 "_tb_layer" "2"
 }
-// entity 14
+// entity 13
 {
 "classname" "func_group"
 "_tb_type" "_tb_layer"
 "_tb_name" "Room3"
 "_tb_id" "3"
-"_tb_layer_sort_index" "2"
+"_tb_layer_sort_index" "4"
 // brush 0
 {
 ( -624 -528 96 ) ( -624 -527 96 ) ( -624 -528 97 ) placeholder/grey [ 0 -1 0 -16 ] [ 0 0 -1 0 ] 90 1 1
@@ -542,13 +536,13 @@
 ( -576 -880 176 ) ( -576 -880 177 ) ( -576 -879 176 ) placeholder/grey [ 0 1 0 0 ] [ 0 0 -1 -16 ] 270 1 1
 }
 }
-// entity 15
+// entity 14
 {
 "classname" "ent_memorystick"
 "origin" "-328 -504 144"
 "_tb_layer" "3"
 }
-// entity 16
+// entity 15
 {
 "classname" "ent_door"
 "origin" "-824 -712 112"
@@ -556,7 +550,7 @@
 "targetname" "door3"
 "_tb_layer" "3"
 }
-// entity 17
+// entity 16
 {
 "classname" "ent_lock"
 "origin" "-792 -664 112"
@@ -564,7 +558,7 @@
 "target" "door3"
 "_tb_layer" "3"
 }
-// entity 18
+// entity 17
 {
 "classname" "ent_lock"
 "origin" "-792 -760 112"
@@ -572,19 +566,19 @@
 "target" "door3"
 "_tb_layer" "3"
 }
-// entity 19
+// entity 18
 {
 "classname" "ent_key"
 "origin" "-712 -840 288"
 "_tb_layer" "3"
 }
-// entity 20
+// entity 19
 {
 "classname" "ent_key"
 "origin" "-632 -936 144"
 "_tb_layer" "3"
 }
-// entity 21
+// entity 20
 {
 "classname" "ent_symbol_display"
 "origin" "-752 -800 176"
@@ -592,13 +586,13 @@
 "angle" "-90"
 "_tb_layer" "3"
 }
-// entity 22
+// entity 21
 {
 "classname" "func_group"
 "_tb_type" "_tb_layer"
 "_tb_name" "Room4"
 "_tb_id" "4"
-"_tb_layer_sort_index" "3"
+"_tb_layer_sort_index" "5"
 // brush 0
 {
 ( -1152 -800 96 ) ( -1152 -799 96 ) ( -1152 -800 97 ) placeholder/grey [ 0 -1 0 0 ] [ 0 0 -1 0 ] 90 1 1
@@ -770,20 +764,21 @@
 ( -1200 -736 176 ) ( -1200 -736 177 ) ( -1200 -735 176 ) placeholder/grey [ 0 1 0 16 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 23
+// entity 22
 {
 "classname" "ent_door"
 "origin" "-1176 -792 112"
 "angle" "180"
+"targetname" "door4"
 "_tb_layer" "4"
 }
-// entity 24
+// entity 23
 {
 "classname" "ent_memorystick"
 "origin" "-1000 -632 128"
 "_tb_layer" "4"
 }
-// entity 25
+// entity 24
 {
 "classname" "ent_number_decal"
 "origin" "-992 -544 160"
@@ -792,15 +787,16 @@
 "index" "1"
 "_tb_layer" "4"
 }
-// entity 26
+// entity 25
 {
 "classname" "ent_keypad"
 "origin" "-1144 -744 112"
 "angle" "180"
 "combination" "0983"
+"target" "door4"
 "_tb_layer" "4"
 }
-// entity 27
+// entity 26
 {
 "classname" "ent_number_decal"
 "origin" "-1488 -576 160"
@@ -809,7 +805,7 @@
 "index" "3"
 "_tb_layer" "4"
 }
-// entity 28
+// entity 27
 {
 "classname" "ent_number_decal"
 "origin" "-1296 -752 320"
@@ -818,7 +814,7 @@
 "index" "2"
 "_tb_layer" "4"
 }
-// entity 29
+// entity 28
 {
 "classname" "ent_number_decal"
 "origin" "-1248 -1520 160"
@@ -827,7 +823,7 @@
 "index" "0"
 "_tb_layer" "4"
 }
-// entity 30
+// entity 29
 {
 "classname" "ent_symbol_display"
 "origin" "-1152 -864 176"
@@ -835,13 +831,13 @@
 "symbol" "timelines"
 "_tb_layer" "4"
 }
-// entity 31
+// entity 30
 {
 "classname" "func_group"
 "_tb_type" "_tb_layer"
 "_tb_name" "Room5"
 "_tb_id" "5"
-"_tb_layer_sort_index" "4"
+"_tb_layer_sort_index" "6"
 // brush 0
 {
 ( -1312 -848 -416 ) ( -1312 -847 -416 ) ( -1312 -848 -415 ) placeholder/grey [ 0 -1 0 0 ] [ 0 0 -1 0 ] 270 1 1
@@ -1075,73 +1071,77 @@
 ( -2320 -48 -400 ) ( -2320 -48 -399 ) ( -2320 -47 -400 ) placeholder/grey [ 0 1 0 16 ] [ 0 0 -1 -16 ] 0 1 1
 }
 }
-// entity 32
+// entity 31
 {
 "classname" "ent_door"
 "origin" "-1272 -424 -400"
 "angle" "90"
+"targetname" "door6"
 "_tb_layer" "5"
 }
-// entity 33
+// entity 32
 {
 "classname" "ent_keypad"
 "origin" "-1224 -456 -400"
 "angle" "90"
+"target" "door6"
 "_tb_layer" "5"
 }
-// entity 34
+// entity 33
 {
 "classname" "ent_memorystick"
 "origin" "-1416 -792 -368"
 "_tb_layer" "5"
 }
-// entity 35
+// entity 34
 {
 "classname" "ent_tapedeck"
 "origin" "-1624 -1080 -256"
 "angle" "90"
 "_tb_layer" "5"
 }
-// entity 36
+// entity 35
 {
 "classname" "ent_tape"
 "origin" "-1784 -344 -80"
 "_tb_layer" "5"
 }
-// entity 37
+// entity 36
 {
 "classname" "ent_door"
 "origin" "-1688 -264 -112"
 "angle" "-90"
+"targetname" "door5"
 "_tb_layer" "5"
 }
-// entity 38
+// entity 37
 {
 "classname" "ent_lock"
 "origin" "-1640 -232 -112"
 "angle" "-90"
+"target" "door5"
 "_tb_layer" "5"
 }
-// entity 39
+// entity 38
 {
 "classname" "ent_key"
 "origin" "-2216 -56 -368"
 "_tb_layer" "5"
 }
-// entity 40
+// entity 39
 {
 "classname" "ent_symbol_display"
 "origin" "-1168 -512 -336"
 "symbol" "spiral"
 "_tb_layer" "5"
 }
-// entity 41
+// entity 40
 {
 "classname" "func_group"
 "_tb_type" "_tb_layer"
 "_tb_name" "FinalRoom"
 "_tb_id" "6"
-"_tb_layer_sort_index" "5"
+"_tb_layer_sort_index" "7"
 // brush 0
 {
 ( -1312 -400 -416 ) ( -1312 -399 -416 ) ( -1312 -400 -415 ) placeholder/grey [ 0 -1 0 0 ] [ 0 0 -1 0 ] 270 1 1
@@ -1197,13 +1197,13 @@
 ( -1152 1168 -400 ) ( -1152 1168 -399 ) ( -1152 1169 -400 ) placeholder/grey [ 0 1 0 16 ] [ 0 0 -1 0 ] 270 1 1
 }
 }
-// entity 42
+// entity 41
 {
 "classname" "ent_memorystick"
 "origin" "-1272 -136 -368"
 "_tb_layer" "6"
 }
-// entity 43
+// entity 42
 {
 "classname" "ent_symbol_entry"
 "origin" "-1272 648 -400"
@@ -1211,7 +1211,7 @@
 "symbol" "timeline"
 "_tb_layer" "6"
 }
-// entity 44
+// entity 43
 {
 "classname" "ent_symbol_entry"
 "origin" "-1320 648 -400"
@@ -1219,7 +1219,7 @@
 "symbol" "star"
 "_tb_layer" "6"
 }
-// entity 45
+// entity 44
 {
 "classname" "ent_symbol_entry"
 "origin" "-1224 648 -400"
@@ -1227,7 +1227,7 @@
 "symbol" "spiral"
 "_tb_layer" "6"
 }
-// entity 46
+// entity 45
 {
 "classname" "ent_symbol_entry"
 "origin" "-1368 648 -400"
@@ -1235,7 +1235,7 @@
 "symbol" "circle"
 "_tb_layer" "6"
 }
-// entity 47
+// entity 46
 {
 "classname" "ent_symbol_entry"
 "origin" "-1176 648 -400"
@@ -1243,10 +1243,40 @@
 "symbol" "x"
 "_tb_layer" "6"
 }
-// entity 48
+// entity 47
 {
 "classname" "ent_door_final"
 "origin" "-1272 952 -400"
 "angle" "90"
 "_tb_layer" "6"
+}
+// entity 48
+{
+"classname" "func_group"
+"_tb_type" "_tb_layer"
+"_tb_name" "PlayerSpawn"
+"_tb_id" "7"
+"_tb_layer_sort_index" "0"
+"_tb_layer_omit_from_export" "1"
+}
+// entity 49
+{
+"classname" "player"
+"origin" "752 -464 -224"
+"angle" "-30"
+"_tb_layer" "7"
+}
+// entity 50
+{
+"classname" "func_group"
+"_tb_type" "_tb_layer"
+"_tb_name" "DevPlayerSpawn"
+"_tb_id" "8"
+"_tb_layer_sort_index" "1"
+}
+// entity 51
+{
+"classname" "player"
+"origin" "-256 16 144"
+"_tb_layer" "8"
 }

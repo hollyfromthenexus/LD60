@@ -14,6 +14,8 @@ public partial class InGameAppState : AppState
         Services.Memory.Reset();
         Services.Memory.SetIsTracking(nameof(InGameAppState), true, 0);
 
+        Services.Inventory.Clear();
+
         // Load and start the first map
         LaunchWorld();
     }
@@ -21,6 +23,8 @@ public partial class InGameAppState : AppState
     public override void ExitState(AppState next)
     {
         KillWorld();
+
+        Services.Inventory.Clear();
 
         Services.Memory.ClearIsTracking(nameof(InGameAppState));
         Services.Player.ClearPlayer();

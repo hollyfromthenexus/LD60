@@ -596,7 +596,7 @@
 "origin" "-680 -600 112"
 "angle" "180"
 "targetname" "door3"
-"memory_usage" "128"
+"memory_usage" "100"
 "_tb_layer" "3"
 }
 // entity 16

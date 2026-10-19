@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ctalxkdldm6il" path="res://Services/Inventory/InventoryService.cs" id="1_kgmdo"]
 [ext_resource type="PackedScene" uid="uid://cnw6conubjq5" path="res://Services/Inventory/inventory_icon.tscn" id="2_haaaw"]
 [ext_resource type="Texture2D" uid="uid://bhc4sfsfx5yit" path="res://Entities/Key/icon_texture.tres" id="3_diwot"]
+[ext_resource type="Texture2D" uid="uid://ydn2rsen57s1" path="res://Entities/Tape/icon_texture.tres" id="4_1f758"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1f758"]
 content_margin_left = 0.0
@@ -22,7 +23,8 @@ layer = -3
 script = ExtResource("1_kgmdo")
 IconScene = ExtResource("2_haaaw")
 ItemTextures = Dictionary[String, Texture2D]({
-"KeyPickup": ExtResource("3_diwot")
+"KeyPickup": ExtResource("3_diwot"),
+"TapePickup": ExtResource("4_1f758")
 })
 IconParent = NodePath("Control/PanelContainer/HBoxContainer")
 
